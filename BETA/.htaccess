@@ -1,0 +1,18 @@
+AddDefaultCharset UTF-8
+RewriteEngine on
+<IfModule mod_rewrite.c>
+#New comment
+#RewriteRule ^$ /kiev [R]
+RewriteRule ^(kiev|ifrankovsk|ternopol|bc|qtnet|kamenec|sdonetsk)$ index.php?city=$1 [L]
+RewriteRule ^(kiev|ifrankovsk|ternopol|bc|qtnet|kamenec|sdonetsk)/(queue|shifts|cdr|history|lateness|account|logging|chanstat)/*$ index.php?city=$1&feature=$2 [L]
+RewriteRule ^(kiev|ifrankovsk|ternopol|bc|qtnet|kamenec|sdonetsk)/(queue|shifts|cdr|history|lateness|account|logging|chanstat)\&(.+)/*$ index.php?city=$1&feature=$2&$3 [L]
+RewriteRule ^(kiev|ifrankovsk|ternopol|bc|qtnet|kamenec|sdonetsk)/(queue|history|shifts|lateness|account)/(tech|experts|proposals|test)$ index.php?city=$1&queue=$3&feature=$2 [L]
+RewriteRule ^(kiev|ifrankovsk|ternopol|bc|qtnet|kamenec|sdonetsk)/queue/agent([0-9]+)/*$ index.php?city=$1&feature=queue&detail=$2 [L]
+
+RewriteRule ^(table)$ view.php [L]
+RewriteRule ^(logout)$ index.php?signout=1 [L]
+RewriteRule ^(summary)/(.+)/*$ includes/makeReport.php?queue=$2 [L]
+RewriteRule ^agent([0-9]+)/*$ index.php?detail=$1 [L]
+
+RewriteRule ^(admin)$ /includes/admin.php [L]
+</IfModule>

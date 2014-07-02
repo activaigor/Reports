@@ -1,0 +1,75 @@
+#makeReport {
+    border-collapse: collapse;
+    margin-top: 100px;
+}
+
+#mainLogo {
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	border: none;
+}
+
+#makeReport td{
+    border: 1px solid grey;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 13px;
+    padding: 5px;
+    text-align: center;
+}
+
+#makeReport td input[type=submit]{
+    display: block;
+    padding: 10px;
+    margin: 0px;
+    text-decoration: none;
+    color: black;
+	border: none;
+	background: white;
+}
+
+#makeReport td input[type=submit]:hover {
+    background: #CCC;
+	cursor: pointer;
+}
+
+#makeReport td span{
+    font-size: 10px;
+    color: grey;
+    display: block;
+}
+
+#makeReport #reportHead td{
+	padding: 0px;
+}
+
+#daySelect {
+    position: absolute;
+    top: 10px;
+    left: 220px;
+    height: 50px;
+    width: 250px;
+    padding: 10px;
+	background: #76A9A9;
+}
+
+#rowGrid1 {
+	background: #E0E0E0;
+}
+
+#rowGrid0 {
+	background: #F0F0F0;
+}
+
+#daySelect form input[type=text]{
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	width: 100%;
+	font-size: 12px;
+}
+
+#daySelect form input[type=submit]{
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 12px;
+	padding: 5px;
+	width: 100%;
+}

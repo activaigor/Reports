@@ -1,0 +1,604 @@
+body{background:#fff url(http://www.ubuntu.com/sites/all/themes/ubuntu10/images/bg_dotted.png);color:#333;font-family:Ubuntu, Arial, "libra sans", sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;-moz-font-smoothing:antialiased;-o-font-smoothing:antialiased;font-smoothing:antialiased}
+
+@font-face { font-family: ModernPics; src: url('../fonts/modernpics.otf'); }
+
+#showLate {
+	position: absolute;
+	top: 90%;
+	left: 60.8%;
+	text-align: center;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 16px;
+	text-decoration: none;
+	background: #76A9A9;
+	color: white;
+	display: block;
+	width: 36.1%;
+	padding: 7px;
+}
+
+#showLate:hover {
+	background: #568989;
+}
+
+#showDisturb {
+	position: absolute;
+	top: 94%;
+	left: 60.8%;
+	text-align: center;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 16px;
+	text-decoration: none;
+	background: #76A9A9;
+	color: white;
+	display: block;
+	width: 36.1%;
+	padding: 7px;
+}
+
+#showDisturb:first-letter {
+	text-transform: uppercase;
+}
+
+#showDisturb:hover {
+	background: #568989;
+}
+
+#lateDiv {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 700px;
+	height: 568px;
+	margin-left: -350px;
+	margin-top: -275px;
+	border: 1px solid #CCC;
+	box-shadow: 3px 3px 0px grey;
+	-moz-box-shadow: 3px 3px 0px grey;
+	-webkit-box-shadow: 3px 3px 0px grey;
+}
+
+#lateDiv iframe{
+	border: none;
+	width: 700px;
+	height: 550px;
+}
+
+#distDiv {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 700px;
+	height: 568px;
+	margin-left: -350px;
+	margin-top: -275px;
+	border: 1px solid #CCC;
+	box-shadow: 3px 3px 0px grey;
+	-moz-box-shadow: 3px 3px 0px grey;
+	-webkit-box-shadow: 3px 3px 0px grey;
+}
+
+#distDiv iframe{
+	border: none;
+	width: 700px;
+	height: 550px;
+}
+
+#loginP {
+	position: fixed;
+    top: 0px;
+	left: 0px;
+	margin: 0px;
+	padding: 0px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 12px;
+	background: #468989;
+	color: #F9F9F9;
+	width: 100%;
+}
+
+#loginP strong {
+	font-weight: normal; 
+	padding: 7px; 
+	line-height: 27px;
+}
+
+#loginP a {
+	font-weight: bold;
+	color: white;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+#loginP a:hover {
+	text-decoration: underline;
+}
+
+#loginBox {
+	background: #F9F9F9;
+	width: 250px;
+	height: 150px;
+	position: fixed;
+	top: 40px;
+	left: 5px;
+	padding: 0px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 14px;
+	border: 1px solid #CCC;
+	box-shadow: 1px 1px 5px #CCC;
+	-moz-box-shadow: 1px 1px 5px #CCC;
+	-webkit-box-shadow: 1px 1px 5px #CCC;
+	z-index: 20;
+}
+
+#loginBox #loginTable {
+	margin: 13px;
+	background: #F9F9F9;
+}
+
+#loginBox #loginTable td {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 13px;
+}
+
+#loginBox input[type="submit"] {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 13px;
+	margin-top: 10px;
+	width: 100%;
+}
+
+#loginBox input[type="text"] {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 13px;
+}
+
+#loginBox input[type="password"] {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 13px;
+}
+
+#close {
+	background: grey;
+	color: white;
+	display: block;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+}
+
+#close:hover {
+	text-shadow: 0px 1px 1px #B9B620;
+}
+
+#titleWindow {
+	margin: 0px;
+	width: 100%;
+	background: #EEE;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 10px;
+	height: 18px;
+	padding-left: 10px;
+	color: #666;
+	border-bottom: 1px solid #E9E9E9;
+}
+
+#nameTitle a{
+	display: block;
+	background: grey;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#onlineFrame {
+	border: none; 
+	margin-top: 23px;
+}
+
+#historyFrame {
+	border: none; 
+	position: absolute; 
+	top: 30px;
+	left: 60%;
+
+}
+
+#makeReportButt {
+    display: block;
+    text-decoration: none;
+    position: fixed; 
+    top: 27px; 
+    right: 0px;
+    height: 80px;
+    width: 50px;
+    text-align: center;
+}
+
+#makeReportButt a{
+    position: relative;
+    top: 0px;
+    display: block;
+    text-decoration: none;
+    font-family: ModernPics, sans-serif;
+	background: #468989;
+    color: white;
+    font-size: 38px;
+    height: 50px;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    font-weight: normal;
+}
+
+#makeReportButt p{
+    margin: 0px;
+    display: block;
+    font-size: 10px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    color: #468989;
+}
+
+#makeReportButt a:hover {
+	background: #86B9B9;
+}
+
+#cssmenu{
+	border:none;
+	border:0px;
+	margin:0px;
+	padding:0px;
+	font: 67.5% 'Lucida Sans Unicode', 'Bitstream Vera Sans', 'Trebuchet Unicode MS', 'Lucida Grande', Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+#cssmenu ul{
+	background:#333333;
+	height:27px;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+#cssmenu li{
+	float:left;
+	padding:0px;
+}
+#cssmenu li a{
+	background: #468989;
+	color:#ffffff;
+	display:block;
+	font-weight:normal;
+	line-height:27px;
+	margin:0px;
+	padding:0px 27px;
+	text-align:center;
+	text-decoration:none;
+}
+#cssmenu li a:hover, #cssmenu ul li:hover a{
+	background:#333333;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+#cssmenu li ul{
+	background:#333333;
+	display:none;
+	height:auto;
+	padding:0px;
+	margin:0px;
+	border:0px;
+	position:absolute;
+	width:225px;
+	z-index:200;
+}
+#cssmenu li:hover ul{
+	display:block;
+	
+}
+#cssmenu li li {
+	display:block;
+	float:none;
+	margin:0px;
+	padding:0px;
+	width:225px;
+}
+#cssmenu li:hover li a{
+	background:none;
+}
+#cssmenu li ul a{
+	display:block;
+	height:35px;
+	font-size:12px;
+	font-style:normal;
+	margin:0px;
+	padding:0px 10px 0px 15px;
+	text-align:left;
+}
+#cssmenu li ul a:hover, #cssmenu li ul li:hover a{
+	background: #468989;
+	border:0px;
+	color:#ffffff;
+	text-decoration:none;
+}
+#cssmenu p{
+	clear:left;
+}	
+
+#daySelect {
+    float: left;
+    margin: 7px;
+    margin-left: 230px;
+    height: 30px;
+	width: 290px;
+    	padding: 5px;
+	background: #76A9A9;
+}
+
+#rowGrid1 {
+	background: #E0E0E0;
+}
+
+#rowGrid0 {
+	background: #F0F0F0;
+}
+
+#daySelect input[type=text]{
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	width: 110px;
+	font-size: 12px;
+}
+
+#daySelect input[type=submit]{
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 12px;
+	padding: 2px;
+	width: 50px;
+	height: 25px;
+}
+
+#wav_player {
+	margin: 7px;
+	margin-left: 20px;
+	width: 460px;
+	float: left;
+}
+
+#mainLogo img {
+	position: fixed;
+	z-index: 10;
+	top: 25px;
+	left: 0px;
+	border: none;
+}
+
+#cdr_navigation {
+	position: fixed;
+	left: 0px;
+	top: 27px;
+	z-index: 10;
+	height: 94px;
+	min-width: 1100px;
+	width: 100%;
+	background: rgba(205,178,151,0.8);
+	background: #FEE0C6;
+	background: #EFEFEF;
+}
+
+#cdr_header td {
+	padding: 5px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 10px;
+	text-align: center;
+	height: 40px;
+	vertical-align: center;
+	background: #555;
+	padding: 0px;
+}
+
+#cdr_header td a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 10px;
+}
+
+#cdr_header td span {
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 10px;
+}
+
+#cdr_header td input {
+	width: 100%;
+	margin: 0px;
+	height: 25px;
+	font-size: 14px;
+	padding: 2px;
+}
+
+#cdr {
+	margin: 0px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 50px;
+	min-width: 1000px;
+	width: 75%;
+	width: 740px;
+	border: 1px solid #EFEFEF;
+	float: left;
+}
+
+#cdr td {
+	padding: 10px;
+	padding: 0px;
+	text-align: center;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#cdr .cdr_prevnext {
+	height: 40px;
+	padding: 0px;
+}
+
+#cdr .cdr_prevnext a {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	color: #999;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+#cdr td select {
+	width: 160px;
+}
+
+#cdr .row0 {
+	background: white;
+}
+
+#cdr .row1 {
+	background: #F3F3F3;
+}
+
+#cdr_stat {
+	height: 160px;
+	width: 200px;
+	background: #EFEFEF;
+	float: left;
+	margin: 40px;
+	margin-top: 130px;
+}
+
+#cdr_stat table {
+	margin: 10px;
+}
+
+#cdr_stat table td {
+	height: 30px;
+	font-size: 14px;
+	background: white;
+	text-align: center;
+}
+
+#cdr_stat table td a {
+	color: #444;
+}
+
+#pre_cdr {
+	margin-top: 130px;
+	margin-left: 10px;
+	width: 1000px;
+	min-height: 30px;
+	text-align: center;
+}
+
+#pre_cdr #refresh_filters {
+	display: block;
+	margin: 0px;
+	text-transform: uppercase;
+	font-size: 12px;
+	background: white;
+	width: 160px;
+	height: 20px;
+	color: #333;
+	border: 15px solid #EFEFEF;
+	border-top: 2px solid #EFEFEF;
+	float: left;
+}
+
+#pre_cdr #cdr_window {
+	display: block;
+	width: 780px;
+	min-height: 20px;
+	max-height: 200px;
+	overflow: auto;
+	overflow-x: hidden;
+	background: white;
+	text-align: center;
+	border: 15px solid #EFEFEF;
+	border-top: 2px solid #EFEFEF;
+	float: left;
+}
+
+#left_body {
+	float: left;
+}
+
+#cdr_window table {
+	margin: 10px;
+}
+
+#cdr_window table td {
+	font-size: 12px;
+	text-align: center;
+}
+
+#cdr_window table td a {
+	color: #444;
+}
+
+#loginBoxVisible {
+	background: #EFEFEF;
+	width: 270px;
+	height: 150px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -135px;
+	margin-top: -100px;
+	padding: 0px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 14px;
+	z-index: 20;
+}
+
+#loginBoxVisible #loginTable {
+	width: 240px;
+	padding: 5px;
+	margin: 10px auto;
+	background: white;
+}
+
+#loginBoxVisible #loginTable td {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 13px;
+}
+
+#loginBoxVisible input[type="submit"] {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 13px;
+	margin-top: 10px;
+	width: 100%;
+	border: none;
+	color: white;
+	background:#333333;
+	height: 35px;
+	line-height: 35px;
+}
+
+#loginBoxVisible input[type="submit"]:hover {
+	cursor: pointer;
+	background: #468989;
+}
+
+#loginBoxVisible input[type="text"] {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 13px;
+	padding: 3px;
+	border: 1px solid #C2C2C2;
+}
+
+#loginBoxVisible input[type="password"] {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 13px;
+	padding: 3px;
+	border: 1px solid #C2C2C2;
+}

@@ -1,0 +1,412 @@
+body {
+margin: 0px; 
+padding: 0px;
+background: white;
+}
+
+#hoverAgents:hover {
+	cursor: pointer;
+}
+
+#mainLogo {
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	border: none;
+}
+
+#extProgress {
+	margin: 5px;
+	width: 98%;
+	background: #E6E6FA;
+	float: left;
+    height: 40px;
+}
+
+#intProgress_online {
+	float: left;
+	text-align: center;
+	background: #1E90FF;
+	color: white;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+    height: 100%;
+}
+
+#intProgress_online p {
+    margin: 0px auto;
+    position: relative;
+    top: 35%;
+}
+
+#intProgress_pause {
+	float: left;
+	text-align: center;
+	background: #0066CC;
+	color: white;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 0px;
+    height: 100%;
+}
+
+#intProgress_pause p {
+    margin: 0px auto;
+    position: relative;
+    top: 35%;
+}
+
+#intProgress_offline {
+	float: left;
+	text-align: center;
+	background: #006699;
+	color: white;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 0px;
+    height: 100%;
+}
+
+#intProgress_offline p {
+    margin: 0px auto;
+    position: relative;
+    top: 35%;
+}
+
+#agentButton {
+	display: block;
+	height: 100%;
+	padding: 5px;
+	text-decoration: none;
+	color: #333;
+	float: left;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 14px;
+	margin: 0px;
+}
+
+#agentsStat {
+	position: relative;
+	top: 40px;
+	left: 0px;
+	margin: 10px;
+	border: none;
+	background: white;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 12px;
+	text-align: center;
+    height: 50px;
+	width: 75%;
+	float: left;
+	padding: 0px;
+}
+
+#callersStat thead td{
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+#callersStatDiv {
+	position: relative;
+	float: left;
+	top: 55px;
+	margin: 10px;
+	margin-top: 0px;
+	height: 810px;
+	width: 20%;
+	background: url(../pictures/dangerouslee-website-background.jpg) repeat;
+	padding-left: 10px;
+}
+
+#callersDiv {
+	background: white;
+	height: 100%;
+}
+
+#callersStat {
+	border: none;
+	border-collapse: collapse;
+	background: white;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	width: 95%;
+	margin: 0px auto;
+	background: none;
+}
+
+#callersStat tr{
+	height: 40px;
+}
+
+#callersStat td{
+	height: 40px;
+}
+
+#callersStat td span{
+	display: block;
+	height: 40px;
+	margin: 5px;
+	line-height: 40px;
+}
+
+#callersStat .new td span{
+	background: #90EE90;
+}
+
+#callersStat .old td span{
+	background: #FA8072;
+}
+
+#callersStat .default td span{
+	background: #E8E8E8;
+}
+
+#statusonline {
+	border-radius: 100%;
+	background-image: linear-gradient(bottom, rgb(27,128,32) 3%, rgb(138,196,96) 76%);
+	background-image: -o-linear-gradient(bottom, rgb(27,128,32) 3%, rgb(138,196,96) 76%);
+	background-image: -moz-linear-gradient(bottom, rgb(27,128,32) 3%, rgb(138,196,96) 76%);
+	background-image: -webkit-linear-gradient(bottom, rgb(27,128,32) 3%, rgb(138,196,96) 76%);
+	background-image: -ms-linear-gradient(bottom, rgb(27,128,32) 3%, rgb(138,196,96) 76%);
+	padding: 9px;
+	padding-left: 8px;
+	padding-right: 8px;
+	box-shadow: 0px 2px 7px #BBB;
+	-moz-box-shadow: 0px 2px 7px #BBB;
+	-webkit-box-shadow: 0px 2px 7px #BBB;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 10px;
+	color: white;
+	text-align: center;
+}
+
+#statusoffline {
+	border-radius: 100%;
+	border: 1px solid #32CD32;
+	background: white;
+	padding: 9px;
+	padding-left: 8px;
+	padding-right: 8px;
+	box-shadow: 0px 2px 7px #BBB;
+	-moz-box-shadow: 0px 2px 7px #BBB;
+	-webkit-box-shadow: 0px 2px 7px #BBB;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 10px;
+	color: #CCC;
+	text-align: center;
+}
+
+#statuslunch {
+	border-radius: 100%;
+    background-image: linear-gradient(bottom, rgb(135,192,230) 42%, rgb(168,210,250) 71%);
+background-image: -o-linear-gradient(bottom, rgb(135,192,230) 42%, rgb(168,210,250) 71%);
+background-image: -moz-linear-gradient(bottom, rgb(135,192,230) 42%, rgb(168,210,250) 71%);
+background-image: -webkit-linear-gradient(bottom, rgb(135,192,230) 42%, rgb(168,210,250) 71%);
+background-image: -ms-linear-gradient(bottom, rgb(135,192,230) 42%, rgb(168,210,250) 71%);
+    padding: 9px;
+	padding-left: 8px;
+	padding-right: 8px;
+	box-shadow: 0px 2px 7px #BBB;
+	-moz-box-shadow: 0px 2px 7px #BBB;
+	-webkit-box-shadow: 0px 2px 7px #BBB;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 10px;
+	color: white;
+	text-align: center;
+}
+
+#statusaway {
+	border-radius: 100%;
+	background-image: linear-gradient(bottom, rgb(222,162,73) 3%, rgb(224,208,67) 76%);
+	background-image: -o-linear-gradient(bottom, rgb(222,162,73) 3%, rgb(224,208,67) 76%);
+	background-image: -moz-linear-gradient(bottom, rgb(222,162,73) 3%, rgb(224,208,67) 76%);
+	background-image: -webkit-linear-gradient(bottom, rgb(222,162,73) 3%, rgb(224,208,67) 76%);
+	background-image: -ms-linear-gradient(bottom, rgb(222,162,73) 3%, rgb(224,208,67) 76%);
+	padding: 9px;
+	padding-left: 8px;
+	padding-right: 8px;
+	box-shadow: 0px 2px 7px #BBB;
+	-moz-box-shadow: 0px 2px 7px #BBB;
+	-webkit-box-shadow: 0px 2px 7px #BBB;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 10px;
+	color: white;
+	text-align: center;
+}
+
+#statusbusy {
+	border-radius: 100%;
+	background-image: linear-gradient(bottom, rgb(148,8,8) 3%, rgb(240,104,104) 76%);
+	background-image: -o-linear-gradient(bottom, rgb(148,8,8) 3%, rgb(240,104,104) 76%);
+	background-image: -moz-linear-gradient(bottom, rgb(148,8,8) 3%, rgb(240,104,104) 76%);
+	background-image: -webkit-linear-gradient(bottom, rgb(148,8,8) 3%, rgb(240,104,104) 76%);
+	background-image: -ms-linear-gradient(bottom, rgb(148,8,8) 3%, rgb(240,104,104) 76%);
+	padding: 9px;
+	padding-left: 8px;
+	padding-right: 8px;
+	box-shadow: 0px 2px 7px #BBB;
+	-moz-box-shadow: 0px 2px 7px #BBB;
+	-webkit-box-shadow: 0px 2px 7px #BBB;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 10px;
+	color: white;
+	text-align: center;
+}
+
+#offlineStats {
+    position: relative;
+    top: 35px;
+	left: 50%;
+    width: 380px;
+    margin-left: -190px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    border: 1px solid grey;
+    box-shadow: 3px 3px #CCC;
+    -moz-box-shadow: 3px 3px #CCC;
+    -webkit-box-shadow: 3px 3px #CCC;
+}
+
+#offlineNum {
+	border: 1px solid #006699; 
+	padding: 5px;
+	padding-left: 10px; 
+	padding-right: 10px;
+}
+
+.missedCalls {
+	background: url(../pictures/call_start.png) no-repeat right;
+	padding-right: 25px; 
+	font-size: 16px;
+}
+
+#popupWindow {
+    margin: 0px;
+    border: 2px solid grey;
+    background: white;
+    position: absolute;
+}
+
+#popupWindow a{
+    display: block;
+    width: 125px;
+    height: 25px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 25px;
+    color: grey;
+	border: none;
+	background: white;
+}
+
+#popupWindow a:hover {
+    color: white;
+    background: grey;
+	cursor: pointer;
+}
+
+#titleWindow {
+	margin: 0px;
+	width: 100%;
+	background: #EEE;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 10px;
+	height: 18px;
+	padding-left: 10px;
+	color: #666;
+	border-bottom: 1px solid #E9E9E9;
+}
+
+#nameTitle a{
+	display: block;
+	background: grey;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#spyDiv {
+	background: white;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 320px;
+	height: 80px;
+	margin-left: -160px;
+	margin-top: -35px;
+	border: 1px solid #CCC;
+	box-shadow: 3px 3px 0px grey;
+	-moz-box-shadow: 3px 3px 0px grey;
+	-webkit-box-shadow: 3px 3px 0px grey;
+}
+
+#bodyWindow {
+	margin: 15px;
+}
+
+#bodyWindow a {
+	background: grey;
+	display: block;
+	color: white;
+	height: 20px;
+	line-height: 20px;
+	text-decoration: none;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+
+#bodyWindow input {
+	width: 100%;
+	height: 20px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+
+.myWindow {
+	background: white;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	border: 1px solid #CCC;
+	box-shadow: 3px 3px 0px grey;
+	-moz-box-shadow: 3px 3px 0px grey;
+	-webkit-box-shadow: 3px 3px 0px grey;
+}
+
+.myWindow .titleWindow {
+	margin: 0px;
+	width: 100%;
+	background: #EEE;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 10px;
+	height: 18px;
+	padding-left: 10px;
+	color: #666;
+	border-bottom: 1px solid #E9E9E9;
+}
+
+.myWindow .closeButt a {
+	display: block;
+	background: grey;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#realtimeBlock {
+	position: absolute;
+	margin: 0px;
+	top: 35px;
+	left: 0px;
+	overflow-y: scroll;
+	height: 95%;
+}
