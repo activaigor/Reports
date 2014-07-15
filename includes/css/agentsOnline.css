@@ -1,7 +1,6 @@
-body {
-margin: 0px; 
-padding: 0px;
-background: white;
+.main {
+	width: 100%;
+	min-width: 600px;
 }
 
 #hoverAgents:hover {
@@ -88,20 +87,23 @@ background: white;
 	margin: 0px;
 }
 
+#agentsStatDiv {
+	padding: 20px;
+	padding-left: 5%;
+	width: 70%;
+	min-width: 350px;
+	float: left;
+}
+
 #agentsStat {
-	position: relative;
-	top: 40px;
-	left: 0px;
-	margin: 10px;
+	margin: 0px;
 	border: none;
 	background: white;
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	font-size: 12px;
 	text-align: center;
-    height: 50px;
-	width: 75%;
-	float: left;
-	padding: 0px;
+	min-height: 50px;
+	width: 100%;
 }
 
 #callersStat thead td{
@@ -112,13 +114,12 @@ background: white;
 #callersStatDiv {
 	position: relative;
 	float: left;
-	top: 55px;
-	margin: 10px;
-	margin-top: 0px;
+	margin: 0px;
 	height: 810px;
-	width: 20%;
+	width: 18%;
+	min-width: 40px;
 	background: url(../pictures/dangerouslee-website-background.jpg) repeat;
-	padding-left: 10px;
+	padding-left: 5px;
 }
 
 #callersDiv {
@@ -135,6 +136,7 @@ background: white;
 	text-align: center;
 	width: 95%;
 	margin: 0px auto;
+	margin-left: 10px;
 	background: none;
 }
 
@@ -166,121 +168,108 @@ background: white;
 }
 
 #statusonline {
+	display: block;
+	height: 40px;
+	width: 45px;
 	border-radius: 100%;
-	background-image: linear-gradient(bottom, rgb(27,128,32) 3%, rgb(138,196,96) 76%);
-	background-image: -o-linear-gradient(bottom, rgb(27,128,32) 3%, rgb(138,196,96) 76%);
-	background-image: -moz-linear-gradient(bottom, rgb(27,128,32) 3%, rgb(138,196,96) 76%);
-	background-image: -webkit-linear-gradient(bottom, rgb(27,128,32) 3%, rgb(138,196,96) 76%);
-	background-image: -ms-linear-gradient(bottom, rgb(27,128,32) 3%, rgb(138,196,96) 76%);
-	padding: 9px;
-	padding-left: 8px;
-	padding-right: 8px;
-	box-shadow: 0px 2px 7px #BBB;
-	-moz-box-shadow: 0px 2px 7px #BBB;
-	-webkit-box-shadow: 0px 2px 7px #BBB;
+	background: rgb(138,196,96);
+	text-align: center;
+	line-height: 40px;
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	font-size: 10px;
 	color: white;
 	text-align: center;
+	text-decoration: none;
 }
 
 #statusoffline {
+	display: block;
+	height: 40px;
+	width: 45px;
 	border-radius: 100%;
 	border: 1px solid #32CD32;
 	background: white;
-	padding: 9px;
-	padding-left: 8px;
-	padding-right: 8px;
-	box-shadow: 0px 2px 7px #BBB;
-	-moz-box-shadow: 0px 2px 7px #BBB;
-	-webkit-box-shadow: 0px 2px 7px #BBB;
+	text-align: center;
+	line-height: 40px;
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	font-size: 10px;
 	color: #CCC;
 	text-align: center;
+	text-decoration: none;
 }
 
 #statuslunch {
+	display: block;
+	height: 40px;
+	width: 45px;
 	border-radius: 100%;
-    background-image: linear-gradient(bottom, rgb(135,192,230) 42%, rgb(168,210,250) 71%);
-background-image: -o-linear-gradient(bottom, rgb(135,192,230) 42%, rgb(168,210,250) 71%);
-background-image: -moz-linear-gradient(bottom, rgb(135,192,230) 42%, rgb(168,210,250) 71%);
-background-image: -webkit-linear-gradient(bottom, rgb(135,192,230) 42%, rgb(168,210,250) 71%);
-background-image: -ms-linear-gradient(bottom, rgb(135,192,230) 42%, rgb(168,210,250) 71%);
-    padding: 9px;
-	padding-left: 8px;
-	padding-right: 8px;
-	box-shadow: 0px 2px 7px #BBB;
-	-moz-box-shadow: 0px 2px 7px #BBB;
-	-webkit-box-shadow: 0px 2px 7px #BBB;
+	background: rgb(168,210,250);
+	text-align: center;
+	line-height: 40px;
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	font-size: 10px;
 	color: white;
 	text-align: center;
+	text-decoration: none;
 }
 
 #statusaway {
+	display: block;
+	height: 40px;
+	width: 45px;
 	border-radius: 100%;
-	background-image: linear-gradient(bottom, rgb(222,162,73) 3%, rgb(224,208,67) 76%);
-	background-image: -o-linear-gradient(bottom, rgb(222,162,73) 3%, rgb(224,208,67) 76%);
-	background-image: -moz-linear-gradient(bottom, rgb(222,162,73) 3%, rgb(224,208,67) 76%);
-	background-image: -webkit-linear-gradient(bottom, rgb(222,162,73) 3%, rgb(224,208,67) 76%);
-	background-image: -ms-linear-gradient(bottom, rgb(222,162,73) 3%, rgb(224,208,67) 76%);
-	padding: 9px;
-	padding-left: 8px;
-	padding-right: 8px;
-	box-shadow: 0px 2px 7px #BBB;
-	-moz-box-shadow: 0px 2px 7px #BBB;
-	-webkit-box-shadow: 0px 2px 7px #BBB;
+	background: rgb(222,208,67);
+	text-align: center;
+	line-height: 40px;
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	font-size: 10px;
 	color: white;
 	text-align: center;
+	text-decoration: none;
 }
 
 #statusbusy {
+	display: block;
+	height: 40px;
+	width: 45px;
 	border-radius: 100%;
-	background-image: linear-gradient(bottom, rgb(148,8,8) 3%, rgb(240,104,104) 76%);
-	background-image: -o-linear-gradient(bottom, rgb(148,8,8) 3%, rgb(240,104,104) 76%);
-	background-image: -moz-linear-gradient(bottom, rgb(148,8,8) 3%, rgb(240,104,104) 76%);
-	background-image: -webkit-linear-gradient(bottom, rgb(148,8,8) 3%, rgb(240,104,104) 76%);
-	background-image: -ms-linear-gradient(bottom, rgb(148,8,8) 3%, rgb(240,104,104) 76%);
-	padding: 9px;
-	padding-left: 8px;
-	padding-right: 8px;
-	box-shadow: 0px 2px 7px #BBB;
-	-moz-box-shadow: 0px 2px 7px #BBB;
-	-webkit-box-shadow: 0px 2px 7px #BBB;
+	background: rgb(240,104,104);
+	text-align: center;
+	line-height: 40px;
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	font-size: 10px;
 	color: white;
 	text-align: center;
+	text-decoration: none;
 }
 
 #offlineStats {
     position: relative;
-    top: 35px;
-	left: 50%;
-    width: 380px;
-    margin-left: -190px;
-	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-    border: 1px solid grey;
-    box-shadow: 3px 3px #CCC;
-    -moz-box-shadow: 3px 3px #CCC;
-    -webkit-box-shadow: 3px 3px #CCC;
+    left: 50%;
+    width: 300px;
+    margin-left: -150px;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+#offlineStats td {
+	background: white;
+	padding: 5px;
 }
 
 #offlineNum {
-	border: 1px solid #006699; 
-	padding: 5px;
-	padding-left: 10px; 
-	padding-right: 10px;
+	width: 20px;
+	text-align: center;
+	font-size: 14px;
 }
 
 .missedCalls {
 	background: url(../pictures/call_start.png) no-repeat right;
 	padding-right: 25px; 
 	font-size: 16px;
+}
+
+#offlineTD {
+	width: 40px;
 }
 
 #popupWindow {
@@ -402,11 +391,30 @@ background-image: -ms-linear-gradient(bottom, rgb(135,192,230) 42%, rgb(168,210,
 	font-weight: bold;
 }
 
-#realtimeBlock {
+.myRow #subStatus {
 	position: absolute;
-	margin: 0px;
-	top: 35px;
-	left: 0px;
-	overflow-y: scroll;
-	height: 95%;
+	z-index: 10;
+	margin-top: 0px;
+	width: 60px;
+	text-align: center;
+	padding-left: 10px;
+	box-shadow: 3px 5px 5px #AAA;
+}
+
+.myRow #shiftP {
+	font-size: 14px;
+}
+
+#statusBox {
+	border: 1px solid;
+}
+
+#identBar {
+	padding-left: 20px;
+}
+
+#identBar td {
+	background: white;
+	padding: 5px;
+	font-size: 14px;
 }

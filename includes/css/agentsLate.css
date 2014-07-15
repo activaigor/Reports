@@ -1,20 +1,6 @@
-body {
-	background: white;
-}
-
-hr {
-	border: none;
-	border-top: 1px solid grey;
-	width: 80%;
-	margin: 0px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-
-#lateTitle {
-	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-	margin: 0px;
-	font-size: 15px;
+#latenessBlock {
+	margin-top: 20px;
+	margin-left: 80px;
 }
 
 #agentsHistory {
@@ -23,6 +9,7 @@ hr {
 	padding: 0px;
 	margin: 0px auto;
 	width: 95%;
+	margin-top: 15px;
 }
 
 #agentsHistory span {
@@ -104,23 +91,45 @@ hr {
 }
 
 #daySelect {
-    position: fixed;
-    top: 0px;
-    left: 400px;
-    height: 30px;
-    width: 220px;
-    padding: 10px;
-	background: #76A9A9;
+	height: 30px;
+    	width: 245px;
+	padding: 10px;
+	background: #EFEFEF;
+	margin: 0px;
+	margin-left: 30px;
 }
 
-#daySelect form input[type=text]{
+#daySelect input[type=text]{
+	margin: 0px;
+	margin-right: 5px;
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	width: 80px;
 	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: none;
+	float: left;
 }
 
-#daySelect form input[type=submit]{
+#daySelect input[type=submit]{
+	padding: 0px;
 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-	font-size: 12px;
+	font-size: 9px;
 	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	border: none;
+	background: #333;
+	color: white;
+	margin: 0px;
+	margin-left: 5px;
+	text-transform: uppercase;
 }
+
+#daySelect input[type=submit]:hover {
+	cursor: pointer;
+}
+

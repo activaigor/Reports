@@ -1,14 +1,4 @@
-<html>
-<head>
-<link type="text/css" rel="stylesheet" media="all" href="../includes/css/agentsLate.css"\>
-<link type="text/css" rel="stylesheet" media="all" href="../includes/css/historyDesc.css"\>
-<link type="text/css" rel="stylesheet" media="all" href="../includes/css/jquery-ui.css"\>
-<script src="../includes/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-<script src="../includes/js/advancedFuncs.js" type="text/javascript"></script>
-<script src="../includes/js/jquery.treeview.js" type="text/javascript"></script>
-<script src="../includes/js/jquery-ui.js" type="text/javascript"></script>
 <script type="text/javascript">
-	javascriptHandler = "javascriptHandler.php";
 	function initTrees() {
 		$("#agentsHistory").treeview({
 			collapsed: true,animated: "fast"
@@ -21,11 +11,29 @@
 		});
 	});
 </script>
-</head>
-<body>
 
-<h3 id="lateTitle">СПИСОК ОПОЗДАВШИХ</h3>
-<hr>
+<div id="daySelect">
+	<form action="{$smarty.server.REQUEST_URI}" method="post">
+		<input type="text" class="datepicker" name="from" value="{$FILTER.from}">
+		<input type="text" class="datepicker" name="to" value="{$FILTER.to}">
+		<input type="submit" value="ok">
+	</form>
+</div>
+
+<div id="select_queue">
+	<div id="cssmenu">
+	<ul>
+   		<li class="has-sub"><a href="/" id="queue_selected"><span>{$QUEUES.$queue}</span></a>
+      		<ul>
+            	{foreach from=$login_queue item=queue_en}
+                	<li><a href="/{$city}/lateness/{$queue_en}">{$QUEUES.$queue_en}</a></li>
+            	{/foreach}
+      		</ul>
+   		</li>
+	</ul>
+	</div>
+</div>
+
 <ul id="agentsHistory">
 {$i=0}
 {foreach from=$agents item=agent key=agentName}
@@ -51,7 +59,3 @@
 </ul>
 	
 {include file='historyDesc.tpl'}
-{include file='dayFilter.tpl'}
-
-</body>
-</html>
