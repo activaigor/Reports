@@ -10,8 +10,6 @@
 	{if ($feature == "queue")}
 	<script src="/includes/js/jquery-1.7.1.min.js" type="text/javascript"></script>
 	<script src="/includes/js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
-	<link href="/includes/js/toastr/toastr.css" rel="stylesheet"/>
-	<script src="/includes/js/toastr/toastr.js" type="text/javascript"></script>
 	{else if ($feature == "history")}
 	<script src="/includes/js/jquery-1.7.1.min.js" type="text/javascript"></script>
 	<script src="/includes/js/jquery-ui.js" type="text/javascript"></script>
@@ -65,10 +63,6 @@
 	<script src="/includes/js/agentsAjax.js" type="text/javascript"></script>
 	<script src="/includes/js/advancedFuncs.js" type="text/javascript"></script>
 	<script src="/includes/js/whoCall.js" type="text/javascript"></script>
-	{if ($user == 'i.rizhiy@lanet.ua')}
-	<script src="/includes/js/sipClient.js" type="text/javascript"></script>
-	{/if}
-	<script src="/includes/js/SIPml-api.js" type="text/javascript"></script>
 	<script type="application/javascript" src="http://jsonip.appspot.com/?callback=getip"> </script>
 	{/if}
 

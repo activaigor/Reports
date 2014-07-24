@@ -133,13 +133,13 @@
 				if (preg_match ("/^([^\@]+)\@([^\@]+)$/", $email, $parts)) {
 					$user = $parts[1];
 					$data=$this->mysql_bill->query("SELECT password FROM client_mailboxes WHERE login = '$user' LIMIT 1");
-		    			if (count($data)==1) {
+		    		if (count($data)==1) {
 						#if (True) {
 						if (crypt($password , $data[0]["password"]) == $data[0]["password"]) {
 							# CREATE NEW SESSION
-	        					$this->session=$this->cookieID_gen(15);
-		        				setcookie($this->cookie_name, $this->session);
-	        					$this->mysql->query("INSERT INTO logging VALUES ('".$this->session."','".$_SERVER['REMOTE_ADDR']."','$email');");
+	        				$this->session=$this->cookieID_gen(15);
+		        			setcookie($this->cookie_name, $this->session);
+	        				$this->mysql->query("INSERT INTO logging VALUES ('".$this->session."','".$_SERVER['REMOTE_ADDR']."','$email');");
 							$this->status = 1;
 							$this->user = $email;
 

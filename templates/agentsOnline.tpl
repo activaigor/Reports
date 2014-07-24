@@ -1,15 +1,3 @@
-
-{if ($user == 'i.rizhiy@lanet.ua')}
-<a href="#" onclick='sipRegister();'>Register</a>
-<a href="#" onclick='sipCall("call-audio");'>Call</a>
-<a href="#" onclick='sipSendDTMF("1");'>1</a>
-<a href="#" onclick='sipSendDTMF("6");'>6</a>
-<a href="#" onclick='sipSendDTMF("#");'>#</a>
-<a href="#" onclick='sipDTMFString("161#161#");'>Login</a>
-<audio id="audio_remote"></audio>
-{/if}
-
-
 <table id="offlineStats" cellspacing="1">
 	<tr>
 		<td width="100" style="padding-left: 20px">ОФФЛАЙН:</td>

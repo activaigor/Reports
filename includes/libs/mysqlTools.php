@@ -20,7 +20,7 @@
         }
 
         public function connect() {
-			$this->link = mysql_connect($this->host,$this->user,$this->pass);
+			$this->link = mysql_pconnect($this->host,$this->user,$this->pass);
 			if ($this->link) {
 				if (mysql_select_db($this->db,$this->link)) {
 					if ($this->charset) mysql_set_charset($this->charset,$this->link);
