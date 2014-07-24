@@ -1,0 +1,135 @@
+#latenessBlock {
+	margin-top: 20px;
+	margin-left: 80px;
+}
+
+#agentsHistory {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	text-align: left;
+	padding: 0px;
+	margin: 0px auto;
+	width: 95%;
+	margin-top: 15px;
+}
+
+#agentsHistory span {
+	display: block;
+	width: 100%;
+}
+
+#agentsHistory li{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+#agentsHistory li p{
+	padding: 0px;
+	padding-left: 10px;
+	margin: 5px;
+}
+
+#agentsHistory ul{
+	margin-left: 0px;
+	padding: 0px;
+}
+
+#agentOrder1 {
+	background: #F0F0F0;
+	margin: 0px;
+	padding: 5px;
+}
+
+#agentOrder0 {
+	background: #E8E8E8; 
+	margin: 0px;
+	padding: 5px;
+}
+
+#workDay:hover {
+	background: #66CCCC;
+	color: white;
+}
+
+#workDay {
+	background: white;
+	color: black;
+	font-weight: normal;
+	border: none;
+	font-size: 14px;
+}
+
+#totalLate {
+	background: white;
+	color: black;
+	font-size: 14px;
+	border: 1px solid;
+}
+
+#agentOrder1:hover {
+	background: grey;
+	color: white;
+	cursor: pointer;
+}
+
+#agentOrder0:hover {
+	background: grey;
+	color: white;
+	cursor: pointer;
+}
+
+#historyTable tr {
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+}
+
+#sumLate {
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 14px;
+	padding: 5px;
+	text-align: center;
+}
+
+#daySelect {
+	height: 30px;
+    	width: 245px;
+	padding: 10px;
+	background: #EFEFEF;
+	margin: 0px;
+	margin-left: 30px;
+}
+
+#daySelect input[type=text]{
+	margin: 0px;
+	margin-right: 5px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	width: 80px;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: none;
+	float: left;
+}
+
+#daySelect input[type=submit]{
+	padding: 0px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 9px;
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	border: none;
+	background: #333;
+	color: white;
+	margin: 0px;
+	margin-left: 5px;
+	text-transform: uppercase;
+}
+
+#daySelect input[type=submit]:hover {
+	cursor: pointer;
+}
+

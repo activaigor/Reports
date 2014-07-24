@@ -1,0 +1,218 @@
+2014-07-13 17:29:11 USER o.tkachuk@lanet.ua: spy-application execute on Agent/252
+2014-07-13 17:29:22 USER o.tkachuk@lanet.ua: spy-application execute on Agent/261
+2014-07-13 17:29:24 USER o.tkachuk@lanet.ua: spy-application execute on Agent/80
+2014-07-13 17:29:34 USER o.tkachuk@lanet.ua: spy-application execute on Agent/78
+2014-07-13 17:29:41 USER o.tkachuk@lanet.ua: spy-application execute on Agent/78
+2014-07-13 17:29:53 USER o.tkachuk@lanet.ua: spy-application execute on Agent/258
+2014-07-15 12:49:34 USER i.rizhiy@lanet.ua: drop Agent/21 from agents_online to history table
+2014-07-16 15:55:21 USER s.vlasenko@lanet.ua: spy-application execute on Agent/258
+2014-07-16 15:55:26 USER s.vlasenko@lanet.ua: spy-application execute on Agent/258
+2014-07-16 15:55:30 USER s.vlasenko@lanet.ua: spy-application execute on Agent/258
+2014-07-16 16:45:24 USER s.vlasenko@lanet.ua: drop Agent/73 from agents_online to history table
+2014-07-16 16:52:14 USER i.rizhiy@lanet.ua: drop Agent/162 from agents_online to history table
+2014-07-16 16:53:59 USER i.rizhiy@lanet.ua: drop Agent/162 from agents_online to history table
+2014-07-16 16:57:36 USER s.vlasenko@lanet.ua: drop Agent/22 from agents_online to history table
+2014-07-16 16:59:57 USER s.vlasenko@lanet.ua: drop Agent/260 from agents_online to history table
+2014-07-16 17:13:22 USER m.beloded@lanet.ua: spy-application execute on Agent/25
+2014-07-16 17:16:41 USER s.vlasenko@lanet.ua: history data change on 907498. new values:
+offlineTime - 0
+onlineTime - 180
+pauseTime - 0
+callTime - 180
+lateTime - 2220
+loginTime - 1404207412
+leaveTime - 1404207684
+note - 
+
+2014-07-16 17:41:32 USER m.kryvokhyzha@lanet.ua: drop Agent/97 from agents_online to history table
+2014-07-16 17:41:51 USER m.kryvokhyzha@lanet.ua: drop Agent/93 from agents_online to history table
+2014-07-16 17:42:08 USER m.kryvokhyzha@lanet.ua: drop Agent/92 from agents_online to history table
+2014-07-16 18:08:27 USER s.vlasenko@lanet.ua: drop Agent/77 from agents_online to history table
+2014-07-16 18:12:01 USER m.kryvokhyzha@lanet.ua: drop Agent/99 from agents_online to history table
+2014-07-16 18:46:09 USER m.beloded@lanet.ua: drop Agent/277 from agents_online to history table
+2014-07-16 18:46:24 USER m.beloded@lanet.ua: drop Agent/278 from agents_online to history table
+2014-07-16 18:46:36 USER m.beloded@lanet.ua: drop Agent/279 from agents_online to history table
+2014-07-16 18:46:51 USER m.beloded@lanet.ua: drop Agent/280 from agents_online to history table
+2014-07-16 20:05:46 USER s.vlasenko@lanet.ua: drop Agent/41 from agents_online to history table
+2014-07-17 10:01:07 USER s.kaploushenko@lanet.ua: drop Agent/265 from agents_online to history table
+2014-07-17 10:01:15 USER s.kaploushenko@lanet.ua: drop Agent/262 from agents_online to history table
+2014-07-17 10:01:22 USER s.kaploushenko@lanet.ua: drop Agent/263 from agents_online to history table
+2014-07-17 10:01:26 USER s.kaploushenko@lanet.ua: drop Agent/275 from agents_online to history table
+2014-07-17 10:01:30 USER s.kaploushenko@lanet.ua: drop Agent/255 from agents_online to history table
+2014-07-17 10:01:34 USER s.kaploushenko@lanet.ua: drop Agent/274 from agents_online to history table
+2014-07-17 10:01:37 USER s.kaploushenko@lanet.ua: drop Agent/281 from agents_online to history table
+2014-07-17 10:01:40 USER s.kaploushenko@lanet.ua: drop Agent/276 from agents_online to history table
+2014-07-17 10:01:42 USER s.kaploushenko@lanet.ua: drop Agent/267 from agents_online to history table
+2014-07-17 10:01:45 USER s.kaploushenko@lanet.ua: drop Agent/258 from agents_online to history table
+2014-07-17 10:01:48 USER s.kaploushenko@lanet.ua: drop Agent/259 from agents_online to history table
+2014-07-17 10:01:51 USER s.kaploushenko@lanet.ua: drop Agent/257 from agents_online to history table
+2014-07-17 10:01:53 USER s.kaploushenko@lanet.ua: drop Agent/271 from agents_online to history table
+2014-07-17 10:01:55 USER s.kaploushenko@lanet.ua: drop Agent/272 from agents_online to history table
+2014-07-17 10:01:58 USER s.kaploushenko@lanet.ua: drop Agent/278 from agents_online to history table
+2014-07-17 10:02:01 USER s.kaploushenko@lanet.ua: drop Agent/251 from agents_online to history table
+2014-07-17 10:02:04 USER s.kaploushenko@lanet.ua: drop Agent/282 from agents_online to history table
+2014-07-17 10:02:06 USER s.kaploushenko@lanet.ua: drop Agent/260 from agents_online to history table
+2014-07-17 10:02:25 USER s.kaploushenko@lanet.ua: drop Agent/137 from agents_online to history table
+2014-07-17 10:02:28 USER s.kaploushenko@lanet.ua: drop Agent/131 from agents_online to history table
+2014-07-17 10:02:31 USER s.kaploushenko@lanet.ua: drop Agent/133 from agents_online to history table
+2014-07-17 10:02:34 USER s.kaploushenko@lanet.ua: drop Agent/135 from agents_online to history table
+2014-07-17 10:02:36 USER s.kaploushenko@lanet.ua: drop Agent/124 from agents_online to history table
+2014-07-17 10:02:41 USER s.kaploushenko@lanet.ua: drop Agent/122 from agents_online to history table
+2014-07-17 10:02:43 USER s.kaploushenko@lanet.ua: drop Agent/138 from agents_online to history table
+2014-07-17 10:02:59 USER s.kaploushenko@lanet.ua: drop Agent/25 from agents_online to history table
+2014-07-17 10:03:03 USER s.kaploushenko@lanet.ua: drop Agent/27 from agents_online to history table
+2014-07-17 10:03:05 USER s.kaploushenko@lanet.ua: drop Agent/32 from agents_online to history table
+2014-07-17 10:03:08 USER s.kaploushenko@lanet.ua: drop Agent/12 from agents_online to history table
+2014-07-17 10:03:22 USER s.kaploushenko@lanet.ua: drop Agent/62 from agents_online to history table
+2014-07-17 10:03:31 USER s.kaploushenko@lanet.ua: drop Agent/98 from agents_online to history table
+2014-07-17 10:03:34 USER s.kaploushenko@lanet.ua: drop Agent/95 from agents_online to history table
+2014-07-17 10:03:38 USER s.kaploushenko@lanet.ua: drop Agent/92 from agents_online to history table
+2014-07-17 10:03:42 USER s.kaploushenko@lanet.ua: drop Agent/94 from agents_online to history table
+2014-07-17 10:03:46 USER s.kaploushenko@lanet.ua: drop Agent/99 from agents_online to history table
+2014-07-17 10:03:49 USER s.kaploushenko@lanet.ua: drop Agent/90 from agents_online to history table
+2014-07-17 10:04:25 USER s.kaploushenko@lanet.ua: drop Agent/74 from agents_online to history table
+2014-07-17 10:04:30 USER s.kaploushenko@lanet.ua: drop Agent/78 from agents_online to history table
+2014-07-17 10:04:35 USER s.kaploushenko@lanet.ua: drop Agent/79 from agents_online to history table
+2014-07-17 10:04:38 USER s.kaploushenko@lanet.ua: drop Agent/71 from agents_online to history table
+2014-07-17 10:04:41 USER s.kaploushenko@lanet.ua: drop Agent/77 from agents_online to history table
+2014-07-17 10:04:44 USER s.kaploushenko@lanet.ua: drop Agent/76 from agents_online to history table
+2014-07-17 11:00:55 USER s.kaploushenko@lanet.ua: spy-application execute on Agent/41
+2014-07-17 14:05:26 USER s.kaploushenko@lanet.ua: drop Agent/131 from agents_online to history table
+2014-07-17 15:25:16 USER d.demianenko@lanet.ua: drop Agent/71 from agents_online to history table
+2014-07-17 17:41:24 USER o.shilo@lanet.ua: drop Agent/278 from agents_online to history table
+2014-07-17 17:41:47 USER o.shilo@lanet.ua: drop Agent/260 from agents_online to history table
+2014-07-17 17:42:08 USER o.shilo@lanet.ua: drop Agent/262 from agents_online to history table
+2014-07-17 17:42:24 USER o.shilo@lanet.ua: drop Agent/271 from agents_online to history table
+2014-07-17 17:43:10 USER o.shilo@lanet.ua: drop Agent/279 from agents_online to history table
+2014-07-17 17:43:25 USER o.shilo@lanet.ua: drop Agent/282 from agents_online to history table
+2014-07-18 08:49:59 USER s.kaploushenko@lanet.ua: drop Agent/74 from agents_online to history table
+2014-07-18 08:52:17 USER e.loskutov@lanet.ua: drop Agent/259 from agents_online to history table
+2014-07-18 12:05:11 USER m.kryvokhyzha@lanet.ua: drop Agent/91 from agents_online to history table
+2014-07-18 14:41:00 USER o.shilo@lanet.ua: drop Agent/283 from agents_online to history table
+2014-07-18 16:31:24 USER o.shilo@lanet.ua: drop Agent/267 from agents_online to history table
+2014-07-18 16:31:42 USER o.shilo@lanet.ua: drop Agent/279 from agents_online to history table
+2014-07-18 16:31:55 USER o.shilo@lanet.ua: drop Agent/270 from agents_online to history table
+2014-07-18 16:32:36 USER o.shilo@lanet.ua: drop Agent/281 from agents_online to history table
+2014-07-18 16:36:27 USER d.zavyalov@lanet.ua: drop Agent/73 from agents_online to history table
+2014-07-18 17:06:40 USER o.shilo@lanet.ua: drop Agent/253 from agents_online to history table
+2014-07-18 17:12:25 USER o.shilo@lanet.ua: drop Agent/276 from agents_online to history table
+2014-07-18 21:29:35 USER d.zavyalov@lanet.ua: drop Agent/72 from agents_online to history table
+2014-07-18 22:50:06 USER d.zavyalov@lanet.ua: drop Agent/75 from agents_online to history table
+2014-07-19 08:37:50 USER d.demianenko@lanet.ua: drop Agent/256 from agents_online to history table
+2014-07-19 09:15:13 USER v.fedko@lanet.ua: spy-application execute on Agent/76
+2014-07-19 09:15:24 USER v.fedko@lanet.ua: spy-application execute on Agent/76
+2014-07-19 09:15:33 USER v.fedko@lanet.ua: spy-application execute on Agent/77
+2014-07-19 09:15:55 USER v.fedko@lanet.ua: spy-application execute on Agent/270
+2014-07-19 09:16:04 USER v.fedko@lanet.ua: spy-application execute on Agent/270
+2014-07-19 09:16:13 USER v.fedko@lanet.ua: spy-application execute on Agent/270
+2014-07-19 09:17:08 USER d.demianenko@lanet.ua: drop Agent/76 from agents_online to history table
+2014-07-19 09:17:32 USER v.fedko@lanet.ua: spy-application execute on Agent/261
+2014-07-19 09:17:38 USER v.fedko@lanet.ua: spy-application execute on Agent/261
+2014-07-19 09:18:30 USER v.fedko@lanet.ua: spy-application execute on Agent/27
+2014-07-19 09:18:35 USER v.fedko@lanet.ua: spy-application execute on Agent/27
+2014-07-19 09:19:02 USER d.demianenko@lanet.ua: spy-application execute on Agent/27
+2014-07-19 17:23:58 USER e.loskutov@lanet.ua: drop Agent/263 from agents_online to history table
+2014-07-19 17:24:09 USER e.loskutov@lanet.ua: drop Agent/262 from agents_online to history table
+2014-07-19 17:24:27 USER e.loskutov@lanet.ua: drop Agent/251 from agents_online to history table
+2014-07-19 17:25:20 USER e.loskutov@lanet.ua: drop Agent/261 from agents_online to history table
+2014-07-20 07:02:59 USER y.starodub@lanet.ua: drop Agent/72 from agents_online to history table
+2014-07-20 09:27:53 USER s.vlasenko@lanet.ua: drop Agent/270 from agents_online to history table
+2014-07-20 09:47:25 USER y.starodub@lanet.ua: drop Agent/98 from agents_online to history table
+2014-07-20 17:12:31 USER s.vlasenko@lanet.ua: drop Agent/25 from agents_online to history table
+2014-07-20 17:12:41 USER s.vlasenko@lanet.ua: drop Agent/255 from agents_online to history table
+2014-07-20 17:12:48 USER s.vlasenko@lanet.ua: drop Agent/260 from agents_online to history table
+2014-07-20 17:13:02 USER s.vlasenko@lanet.ua: drop Agent/271 from agents_online to history table
+2014-07-20 17:13:09 USER s.vlasenko@lanet.ua: drop Agent/278 from agents_online to history table
+2014-07-20 17:16:44 USER s.vlasenko@lanet.ua: drop Agent/282 from agents_online to history table
+2014-07-20 18:10:40 USER s.vlasenko@lanet.ua: drop Agent/12 from agents_online to history table
+2014-07-20 19:05:35 USER s.vlasenko@lanet.ua: drop Agent/73 from agents_online to history table
+2014-07-20 19:24:28 USER s.vlasenko@lanet.ua: drop Agent/281 from agents_online to history table
+2014-07-20 19:29:33 USER s.vlasenko@lanet.ua: drop Agent/94 from agents_online to history table
+2014-07-20 19:29:37 USER s.vlasenko@lanet.ua: drop Agent/95 from agents_online to history table
+2014-07-20 21:30:12 USER o.tkachuk@lanet.ua: drop Agent/262 from agents_online to history table
+2014-07-20 21:32:04 USER o.tkachuk@lanet.ua: drop Agent/265 from agents_online to history table
+2014-07-20 21:32:31 USER o.tkachuk@lanet.ua: drop Agent/274 from agents_online to history table
+2014-07-20 21:46:18 USER v.fedko@lanet.ua: drop Agent/276 from agents_online to history table
+2014-07-21 08:47:16 USER s.kaploushenko@lanet.ua: drop Agent/71 from agents_online to history table
+2014-07-21 09:50:47 USER m.kryvokhyzha@lanet.ua: drop Agent/97 from agents_online to history table
+2014-07-21 09:58:29 USER y.skvarchevskaya@lanet.ua: history data change on 908096. new values:
+offlineTime - 4140
+onlineTime - 10920
+pauseTime - 14280
+callTime - 5640
+lateTime - 0
+loginTime - 1405659615
+leaveTime - 1405692061
+note - 
+
+2014-07-21 09:59:17 USER y.skvarchevskaya@lanet.ua: history data change on 908109. new values:
+offlineTime - 3780
+onlineTime - 13980
+pauseTime - 12480
+callTime - 9060
+lateTime - 2280
+loginTime - 1405666802
+leaveTime - 1405699443
+note - 
+
+2014-07-21 11:54:08 USER s.kaploushenko@lanet.ua: remove 908098 data from history
+2014-07-21 11:54:14 USER s.kaploushenko@lanet.ua: remove 908099 data from history
+2014-07-21 16:26:28 USER s.vlasenko@lanet.ua: drop Agent/73 from agents_online to history table
+2014-07-21 18:05:42 USER m.kryvokhyzha@lanet.ua: drop Agent/92 from agents_online to history table
+2014-07-21 18:06:07 USER m.kryvokhyzha@lanet.ua: drop Agent/91 from agents_online to history table
+2014-07-21 18:28:28 USER s.vlasenko@lanet.ua: drop Agent/284 from agents_online to history table
+2014-07-21 22:22:38 USER s.vlasenko@lanet.ua: drop Agent/25 from agents_online to history table
+2014-07-21 23:09:05 USER s.vlasenko@lanet.ua: drop Agent/257 from agents_online to history table
+2014-07-21 23:09:10 USER s.vlasenko@lanet.ua: drop Agent/274 from agents_online to history table
+2014-07-21 23:09:13 USER s.vlasenko@lanet.ua: drop Agent/267 from agents_online to history table
+2014-07-21 23:09:17 USER s.vlasenko@lanet.ua: drop Agent/32 from agents_online to history table
+2014-07-21 23:09:21 USER s.vlasenko@lanet.ua: drop Agent/272 from agents_online to history table
+2014-07-21 23:09:25 USER s.vlasenko@lanet.ua: drop Agent/277 from agents_online to history table
+2014-07-21 23:09:29 USER s.vlasenko@lanet.ua: drop Agent/275 from agents_online to history table
+2014-07-21 23:09:34 USER s.vlasenko@lanet.ua: drop Agent/285 from agents_online to history table
+2014-07-21 23:09:41 USER s.vlasenko@lanet.ua: drop Agent/263 from agents_online to history table
+2014-07-21 23:09:46 USER s.vlasenko@lanet.ua: drop Agent/268 from agents_online to history table
+2014-07-21 23:24:20 USER s.vlasenko@lanet.ua: drop Agent/265 from agents_online to history table
+2014-07-22 02:02:25 USER s.vlasenko@lanet.ua: drop Agent/258 from agents_online to history table
+2014-07-22 02:02:30 USER s.vlasenko@lanet.ua: drop Agent/252 from agents_online to history table
+2014-07-22 07:36:31 USER y.starodub@lanet.ua: drop Agent/138 from agents_online to history table
+2014-07-22 07:36:37 USER y.starodub@lanet.ua: drop Agent/127 from agents_online to history table
+2014-07-22 07:43:20 USER y.starodub@lanet.ua: drop Agent/253 from agents_online to history table
+2014-07-22 08:54:17 USER s.kaploushenko@lanet.ua: drop Agent/78 from agents_online to history table
+2014-07-22 10:12:02 USER v.fedko@lanet.ua: drop Agent/76 from agents_online to history table
+2014-07-22 16:14:11 USER v.fedko@lanet.ua: drop Agent/73 from agents_online to history table
+2014-07-22 17:01:56 USER e.nekluayev@lanet.ua: drop Agent/73 from agents_online to history table
+2014-07-22 20:20:28 USER e.nekluayev@lanet.ua: spy-application execute on Agent/265
+2014-07-22 22:15:29 USER v.fedko@lanet.ua: drop Agent/262 from agents_online to history table
+2014-07-22 22:15:44 USER v.fedko@lanet.ua: drop Agent/263 from agents_online to history table
+2014-07-22 22:15:56 USER v.fedko@lanet.ua: drop Agent/275 from agents_online to history table
+2014-07-22 22:16:06 USER v.fedko@lanet.ua: drop Agent/282 from agents_online to history table
+2014-07-22 22:16:15 USER v.fedko@lanet.ua: drop Agent/285 from agents_online to history table
+2014-07-22 22:16:22 USER v.fedko@lanet.ua: drop Agent/271 from agents_online to history table
+2014-07-22 22:16:33 USER v.fedko@lanet.ua: drop Agent/281 from agents_online to history table
+2014-07-22 22:16:43 USER v.fedko@lanet.ua: drop Agent/265 from agents_online to history table
+2014-07-22 23:39:30 USER v.fedko@lanet.ua: drop Agent/261 from agents_online to history table
+2014-07-22 23:39:38 USER v.fedko@lanet.ua: drop Agent/274 from agents_online to history table
+2014-07-22 23:39:47 USER v.fedko@lanet.ua: drop Agent/257 from agents_online to history table
+2014-07-22 23:39:58 USER v.fedko@lanet.ua: drop Agent/255 from agents_online to history table
+2014-07-23 06:46:48 USER v.fedko@lanet.ua: spy-application execute on Agent/270
+2014-07-23 06:46:52 USER v.fedko@lanet.ua: spy-application execute on Agent/270
+2014-07-23 06:47:10 USER v.fedko@lanet.ua: spy-application execute on Agent/270
+2014-07-23 09:13:59 USER s.kaploushenko@lanet.ua: drop Agent/71 from agents_online to history table
+2014-07-23 09:15:40 USER s.kaploushenko@lanet.ua: drop Agent/94 from agents_online to history table
+2014-07-23 09:35:28 USER s.shvydun@lanet.ua: drop Agent/285 from agents_online to history table
+2014-07-23 11:39:09 USER s.shvydun@lanet.ua: drop Agent/255 from agents_online to history table
+2014-07-23 11:39:21 USER s.shvydun@lanet.ua: drop Agent/271 from agents_online to history table
+2014-07-23 12:03:45 USER s.shvydun@lanet.ua: drop Agent/283 from agents_online to history table
+2014-07-23 12:59:52 USER i.rizhiy@lanet.ua: leave a comment on Agent/500
+2014-07-23 15:12:08 USER s.shvydun@lanet.ua: drop Agent/260 from agents_online to history table
+2014-07-23 16:20:16 USER s.shvydun@lanet.ua: drop Agent/279 from agents_online to history table
+2014-07-23 17:02:41 USER s.shvydun@lanet.ua: drop Agent/274 from agents_online to history table
+2014-07-23 17:27:53 USER m.kryvokhyzha@lanet.ua: drop Agent/91 from agents_online to history table
+2014-07-23 18:04:23 USER s.shvydun@lanet.ua: drop Agent/281 from agents_online to history table
+2014-07-23 18:04:35 USER s.shvydun@lanet.ua: drop Agent/284 from agents_online to history table
+2014-07-23 18:21:22 USER d.zavyalov@lanet.ua: drop Agent/77 from agents_online to history table
+2014-07-23 18:21:31 USER d.zavyalov@lanet.ua: drop Agent/73 from agents_online to history table
+2014-07-24 07:18:36 USER y.starodub@lanet.ua: drop Agent/256 from agents_online to history table
+2014-07-24 09:01:02 USER s.kaploushenko@lanet.ua: drop Agent/76 from agents_online to history table
+2014-07-24 09:58:19 USER m.kryvokhyzha@lanet.ua: drop Agent/96 from agents_online to history table
