@@ -1,9 +1,3 @@
-<html>
-<head>
-<link type="text/css" rel="stylesheet" media="all" href="../includes/css/makeReport.css"\>
-<link type="text/css" rel="stylesheet" media="all" href="../includes/css/jquery-ui.css"\>
-<script src="../includes/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-<script src="../includes/js/jquery-ui.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(function() {
@@ -11,27 +5,34 @@
 		});
 	});
 </script>
-<style type="text/css" media="print,screen" >
-th {
-    font-family:Arial;
-    color:black;
-    background-color:lightgrey;
-}
-thead {
-    display:table-header-group;
-}
-tbody {
-    display:table-row-group;
-}
-</style>
-</head>
-<body>
-<a href="../index.php" id="mainLogo"><img src="/includes/pictures/roundcube_logo.png" style="position: absolute; top: 25px; left: 0px; border: none;"></a>
+
+<div id="daySelect">
+	<form action="{$smarty.server.REQUEST_URI}" method="post">
+		<input type="text" class="datepicker" name="from" value="{$FILTER.from}">
+		<input type="text" class="datepicker" name="to" value="{$FILTER.to}">
+		<input type="submit" value="ok">
+	</form>
+</div>
+
+<div id="select_queue">
+	<div id="cssmenu">
+	<ul>
+   		<li class="has-sub"><a href="/" id="queue_selected"><span>{$QUEUES.$queue}</span></a>
+      		<ul>
+            	{foreach from=$login_queue item=queue_en}
+                	<li><a href="/{$city}/account/{$queue_en}">{$QUEUES.$queue_en}</a></li>
+            	{/foreach}
+      		</ul>
+   		</li>
+	</ul>
+	</div>
+</div>
+
 <table id="makeReport">
 	<thead>
 		<tr id="reportHead">
 			<td>№</td>
-			<form method="get">
+			<form method="post">
 			{foreach from=$COLUMNS item=order key=index}
 				<td><input type="submit" name="order" value="{$index}"></td>
 			{/foreach}
@@ -61,7 +62,3 @@ tbody {
 		{/foreach}
 	</tbody>
 </table>
-{include file="day-cityFilter.tpl"}
-
-</body>
-</html>

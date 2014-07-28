@@ -44,7 +44,7 @@
 	$agents->getNames();
 	
 	$cdr = new CDR($sql,$agents->agentsNames);
-	$cdr_table = $cdr->getTable($FILTERS,$DATE_FILTERS["from"],$DATE_FILTERS["to"],$PAGE);
+	$cdr_table = $cdr->getTable($FILTERS,$DATE_FILTERS["from"],$DATE_FILTERS["to"]);
 	$pages_url = $cdr->pages_url($_GET,$cdr->pages_count);
 
 	$queues = $cdr->getQueues();

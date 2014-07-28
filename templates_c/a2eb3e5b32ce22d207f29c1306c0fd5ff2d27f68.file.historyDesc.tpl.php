@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-08 12:10:44
+<?php /* Smarty version Smarty-3.1.12, created on 2014-05-26 17:52:15
          compiled from "/var/www/html/agents/BETA/templates/historyDesc.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1953205359518a1694a528d3-32319620%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:11530518505383551fe03d77-07258698%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'a2eb3e5b32ce22d207f29c1306c0fd5ff2d27f68' => 
     array (
       0 => '/var/www/html/agents/BETA/templates/historyDesc.tpl',
-      1 => 1358935596,
+      1 => 1371113695,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1953205359518a1694a528d3-32319620',
+  'nocache_hash' => '11530518505383551fe03d77-07258698',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_518a1694a55b29_35616134',
+  'unifunc' => 'content_5383551fe1f958_16014427',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_518a1694a55b29_35616134')) {function content_518a1694a55b29_35616134($_smarty_tpl) {?><div id="historyDesc" style="display: none;" class="myDialog">
+<?php if ($_valid && !is_callable('content_5383551fe1f958_16014427')) {function content_5383551fe1f958_16014427($_smarty_tpl) {?><div id="historyDesc" style="display: none;" class="myDialog">
 	<table id="titleWindow">
 		<tr>
 			<td width="80%">Окно истории</td>
@@ -49,7 +49,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</tr>
 		<tr>
 			<td>Начало смены:</td>
-			<td><input id="loginTime" type="text" disabled="true" value="пусто"></td>
+			<td><input id="loginTime" title="" type="text" disabled="true" value="пусто"></td>
 		</tr>
 		<tr>
 			<td>Конец смены:</td>

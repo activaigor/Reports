@@ -1,24 +1,28 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-30 12:38:36
+<?php /* Smarty version Smarty-3.1.12, created on 2014-05-26 17:52:15
          compiled from "/var/www/html/agents/BETA/templates/agentsHistory.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:332222276518a169494b946-51756029%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:4076177275383551fcd3ff9-28776115%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'fc020e287ff62f82bb1b910770bcedf916686ab3' => 
     array (
       0 => '/var/www/html/agents/BETA/templates/agentsHistory.tpl',
-      1 => 1369905618,
+      1 => 1395756974,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '332222276518a169494b946-51756029',
+  'nocache_hash' => '4076177275383551fcd3ff9-28776115',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_518a1694a434e6_07949778',
   'variables' => 
   array (
+    'FILTER' => 0,
+    'queue' => 0,
+    'QUEUES' => 0,
+    'login_queue' => 0,
+    'city' => 0,
+    'queue_en' => 0,
     'agents' => 0,
     'i' => 0,
     'agentName' => 0,
@@ -30,45 +34,42 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'WINDOWS' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_5383551fdeffa5_75846161',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_518a1694a434e6_07949778')) {function content_518a1694a434e6_07949778($_smarty_tpl) {?><html>
-<head>
-<link type="text/css" rel="stylesheet" media="all" href="../includes/css/agentsHistory.css"\>
-<link type="text/css" rel="stylesheet" media="all" href="../includes/css/historyDesc.css"\>
-<link type="text/css" rel="stylesheet" media="all" href="../includes/css/jquery-ui.css"\>
-<script src="../includes/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-<script src="../includes/js/advancedFuncs.js" type="text/javascript"></script>
-<script src="../includes/js/jquery.treeview.js" type="text/javascript"></script>
-<script src="../includes/js/jquery-ui.js" type="text/javascript"></script>
-<script type="text/javascript">
-	javascriptHandler = "javascriptHandler.php";
-	function initTrees() {
-		$("#agentsHistory").treeview({
-			collapsed: true,animated: "fast"
-		});
-	}
-	$(document).ready(function(){
-		initTrees();
-		$( ".draggable" ).draggable({
-			revert : true,
-			zIndex: 1,
-			containment:'parent'
-		});
-		$( ".draggable" ).droppable({
-			drop: function( event, ui ) {
-				var dragged = ui.draggable;
-				idDragged = $(dragged).find("span").find("input").val();
-				idDropped = $(this).find("span").find("input").val();
-				historySum(idDragged , idDropped);
-			}
-		});
-		$(function() {
-			$( ".datepicker" ).datepicker({ dateFormat: "yy-mm-dd" });
-		});
-	});
-</script>
-</head>
-<body>
+<?php if ($_valid && !is_callable('content_5383551fdeffa5_75846161')) {function content_5383551fdeffa5_75846161($_smarty_tpl) {?><div id="daySelect">
+	<form action="<?php echo $_SERVER['REQUEST_URI'];?>
+" method="post">
+		<input type="text" class="datepicker" name="from" value="<?php echo $_smarty_tpl->tpl_vars['FILTER']->value['from'];?>
+">
+		<input type="text" class="datepicker" name="to" value="<?php echo $_smarty_tpl->tpl_vars['FILTER']->value['to'];?>
+">
+		<input type="submit" value="ok">
+	</form>
+</div>
+
+<div id="select_queue">
+	<div id="cssmenu">
+	<ul>
+   		<li class="has-sub"><a href="/" id="queue_selected"><span><?php echo $_smarty_tpl->tpl_vars['QUEUES']->value[$_smarty_tpl->tpl_vars['queue']->value];?>
+</span></a>
+      		<ul>
+            	<?php  $_smarty_tpl->tpl_vars['queue_en'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['queue_en']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['login_queue']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['queue_en']->key => $_smarty_tpl->tpl_vars['queue_en']->value){
+$_smarty_tpl->tpl_vars['queue_en']->_loop = true;
+?>
+                	<li><a href="/<?php echo $_smarty_tpl->tpl_vars['city']->value;?>
+/history/<?php echo $_smarty_tpl->tpl_vars['queue_en']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['QUEUES']->value[$_smarty_tpl->tpl_vars['queue_en']->value];?>
+</a></li>
+            	<?php } ?>
+      		</ul>
+   		</li>
+	</ul>
+	</div>
+</div>
+
 <ul id="agentsHistory">
 <?php $_smarty_tpl->tpl_vars['i'] = new Smarty_variable(0, null, 0);?>
 <?php  $_smarty_tpl->tpl_vars['agentMonth'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['agentMonth']->_loop = false;
@@ -129,8 +130,6 @@ $_smarty_tpl->tpl_vars['data']->_loop = true;
 	
 <?php echo $_smarty_tpl->getSubTemplate ('historyDesc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<?php echo $_smarty_tpl->getSubTemplate ('dayFilter.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
 
 <?php  $_smarty_tpl->tpl_vars['window'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['window']->_loop = false;
  $_smarty_tpl->tpl_vars['index'] = new Smarty_Variable;
@@ -147,7 +146,4 @@ $_smarty_tpl->tpl_vars['window']->_loop = true;
 	<a href="javascript: void(0);" id="goRecords">ЗАПИСИ</a>
 	<a href="javascript: void(0);" id="showDisturbs">НАРУШЕНИЯ</a>
 </div>
-
-</body>
-</html>
 <?php }} ?>

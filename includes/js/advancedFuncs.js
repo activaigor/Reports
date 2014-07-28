@@ -14,7 +14,7 @@ function doDefault(theText) {
 
 function confirmDelete(id) {
     if(confirm('Действительно хотите удалить?')) {
-        top.document.location='index.php?remove='+id;
+        top.document.location='/?remove='+id;
     }
 }
 
@@ -32,7 +32,7 @@ function toggleWindow(item) {
 	return false;
 };
 
-function popupMenu(e,id){
+function popupMenu(e,id,city){
   if(document.all) e=window.event;
   e.cancelBubble=true;
   hideMyMenu();
@@ -46,7 +46,7 @@ function popupMenu(e,id){
   $("#spyAgent").unbind("click").click(function(){prepareSpy(); $("#popupWindow").toggle();});
   $("#agentNote").unbind("click").click(function(){$('#commentDiv').toggle(); $("#popupWindow").toggle();});
   //$("#detailAgent").prop("href" , "?logged=1&detail=" + id);
-  $("#detailAgent").prop("href" , "/agent" + id);
+  $("#detailAgent").prop("href" , "agent" + id);
   
   agentSelected = id;
 
@@ -179,7 +179,7 @@ function deleteFromList(id) {
         send.error( function(data) {alert("ERROR")} );
 	    send.success( function(data) {
 			alert("Успешно выполнено!");
-			window.location.href = "index.php";
+			window.location.href = "/";
 	    });
     }
     

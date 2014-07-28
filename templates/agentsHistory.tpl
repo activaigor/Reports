@@ -1,41 +1,25 @@
-<html>
-<head>
-<link type="text/css" rel="stylesheet" media="all" href="../includes/css/agentsHistory.css"\>
-<link type="text/css" rel="stylesheet" media="all" href="../includes/css/historyDesc.css"\>
-<link type="text/css" rel="stylesheet" media="all" href="../includes/css/jquery-ui.css"\>
-<script src="../includes/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-<script src="../includes/js/advancedFuncs.js" type="text/javascript"></script>
-<script src="../includes/js/jquery.treeview.js" type="text/javascript"></script>
-<script src="../includes/js/jquery-ui.js" type="text/javascript"></script>
-<script type="text/javascript">
-	javascriptHandler = "javascriptHandler.php";
-	function initTrees() {
-		$("#agentsHistory").treeview({
-			collapsed: true,animated: "fast"
-		});
-	}
-	$(document).ready(function(){
-		initTrees();
-		$( ".draggable" ).draggable({
-			revert : true,
-			zIndex: 1,
-			containment:'parent'
-		});
-		$( ".draggable" ).droppable({
-			drop: function( event, ui ) {
-				var dragged = ui.draggable;
-				idDragged = $(dragged).find("span").find("input").val();
-				idDropped = $(this).find("span").find("input").val();
-				historySum(idDragged , idDropped);
-			}
-		});
-		$(function() {
-			$( ".datepicker" ).datepicker({ dateFormat: "yy-mm-dd" });
-		});
-	});
-</script>
-</head>
-<body>
+<div id="daySelect">
+	<form action="{$smarty.server.REQUEST_URI}" method="post">
+		<input type="text" class="datepicker" name="from" value="{$FILTER.from}">
+		<input type="text" class="datepicker" name="to" value="{$FILTER.to}">
+		<input type="submit" value="ok">
+	</form>
+</div>
+
+<div id="select_queue">
+	<div id="cssmenu">
+	<ul>
+   		<li class="has-sub"><a href="/" id="queue_selected"><span>{$QUEUES.$queue}</span></a>
+      		<ul>
+            	{foreach from=$login_queue item=queue_en}
+                	<li><a href="/{$city}/history/{$queue_en}">{$QUEUES.$queue_en}</a></li>
+            	{/foreach}
+      		</ul>
+   		</li>
+	</ul>
+	</div>
+</div>
+
 <ul id="agentsHistory">
 {$i=0}
 {foreach from=$agents item=agentMonth key=agentName}
@@ -62,7 +46,6 @@
 </ul>
 	
 {include file='historyDesc.tpl'}
-{include file='dayFilter.tpl'}
 
 {foreach from=$WINDOWS item=window key=index}
 	{include file="window.tpl"}
@@ -72,6 +55,3 @@
 	<a href="javascript: void(0);" id="goRecords">ЗАПИСИ</a>
 	<a href="javascript: void(0);" id="showDisturbs">НАРУШЕНИЯ</a>
 </div>
-
-</body>
-</html>

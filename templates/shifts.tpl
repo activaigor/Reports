@@ -1,11 +1,3 @@
-<html>
-<head>
-<link type="text/css" rel="stylesheet" media="all" href="./includes/css/shifts.css"\>
-<link type="text/css" rel="stylesheet" media="all" href="./includes/css/jquery-ui.css"\>
-<link rel="stylesheet" href="./includes/css/jquery.fileInput.css" />
-<script src="./includes/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-<script src="./includes/js/jquery-ui.js" type="text/javascript"></script>
-<script src="./includes/js/jquery.fileInput.js" type="text/javascript"></script>
 <script>
 	var hoverTimeout;
 	var agentNames = [
@@ -67,89 +59,51 @@
 			$("#shift_delete").find("#end").val(time[1]);
 			$("#shift_delete").css("display" , "block");
 		});
+			
+		$("#pick_calendar").click(function(){
+			if ($("#daySelect").css("margin-right") == "-260px") {
+				$("#daySelect").animate({
+					marginRight: "0px"
+				},100);
+			} else {
+				$("#daySelect").animate({
+					marginRight: "-260px"
+				},100);
+			}
+		});
 
 	});
 </script>
-</head>
-<body>
-<a href="/" id="mainLogo"><img src="./includes/pictures/roundcube_logo.png" style="position: fixed; top: 5px; left: 0px; border: none;"></a>
 
-<div id="main_navigation">
-	<h3>панель экспорта</h3>
-	<form id="shifts_export" method="post" enctype="multipart/form-data">
-		<table>
-		<tr>
-			<td><input type="file" name="shift"></td>
-			<td><input type="submit" name="export" value="ok"></td>
-		</tr>
-		<tr>
-			<td><input type="text" name="year_month" value="{date("Y-m")}"></td>
-		</tr>
-		</table>
-	</form>
-	<h3>фильтр даты</h3>
-	{include file='dayFilter.tpl'}
-	<h3>фильтр смен</h3>
-	<form id="shift_select" method="get">
-		
-		{if ($duration == 8)}
-		<input type="submit" name="shift_type" class="selected" value="8">
-		{else}
-		<input type="submit" name="shift_type" value="8">
-		{/if}
-		{if ($duration == 12)}
-		<input type="submit" name="shift_type" class="selected" value="12">
-		{else}
-		<input type="submit" name="shift_type" value="12">
-		{/if}
-		<input type="hidden" name="from" value="{$FILTER.from}">
-		<input type="hidden" name="to" value="{$FILTER.to}">
-		<input type="hidden" name="shift_class" value="{$type}">
-		<input type="hidden" name="shift_class" value="{$type}">
-		<input type="hidden" name="city" value="{$city}">
-	</form>
-	<h3>тип смен</h3>
-	<form id="shift_select" method="get">
-		
-		{if ($type == "tech")}
-		<input type="submit" name="shift_class" class="selected" value="tech">
-		{else}
-		<input type="submit" name="shift_class" value="tech">
-		{/if}
-		{if ($type == "manager")}
-		<input type="submit" name="shift_class" class="selected" value="manager">
-		{else}
-		<input type="submit" name="shift_class" value="manager">
-		{/if}
-		<input type="hidden" name="from" value="{$FILTER.from}">
-		<input type="hidden" name="to" value="{$FILTER.to}">
-		<input type="hidden" name="shift_type" value="{$duration}">
-		<input type="hidden" name="shift_type" value="{$duration}">
-		<input type="hidden" name="city" value="{$city}">
-	</form>
+<div id="daySelect">
+	<a href="#" id="pick_calendar"><img height="48" src="{str_replace("[icon_type]", "light", $ICONS.calendar)}"></a>
+	<input type="text" class="datepicker" name="from" value="{$smarty.get.from}">
+	<input type="text" class="datepicker" name="to" value="{$smarty.get.to}">
+	<input type="submit" value="ok">
+</div>
 	
-	<h3>город</h3>
-	<div id="daySelect">
-	<form method="get">
-		<select name="city">
-		{foreach from=$CITIES item=city_cur key=city_eng}
-			{if ($city_eng == $city)}
-			<option selected value="{$city_eng}">{$city_cur}</option>
-			{else}
-			<option value="{$city_eng}">{$city_cur}</option>
-			{/if}
-		{/foreach}
-		</select>
-		
-		<input type="submit" name="shift_class" value="ok">
-		<input type="hidden" name="from" value="{$FILTER.from}">
-		<input type="hidden" name="to" value="{$FILTER.to}">
-		<input type="hidden" name="shift_type" value="{$duration}">
-		<input type="hidden" name="shift_type" value="{$duration}">
-		<input type="hidden" name="shift_class" value="{$type}">
-	</form>
+<div id="main_navigation">
+
+	<div id="select_queue">
+		<div id="cssmenu">
+		<ul>
+	   		<li class="has-sub"><a href="/" id="queue_selected"><span>{$QUEUES.$queue}</span></a>
+      			<ul>
+            		{foreach from=$login_queue item=queue_en}
+                		<li><a href="/{$city}/shifts/{$queue_en}">{$QUEUES.$queue_en}</a></li>
+	            	{/foreach}
+      			</ul>
+   			</li>
+		</ul>
+		</div>
 	</div>
 
+	<form id="shifts_export" method="post" enctype="multipart/form-data">
+	<img height="48" src="{str_replace("[icon_type]", "light", $ICONS.excel)}">
+		<input type="text" name="year_month" value="{date("Y-m")}">
+		<input type="file" name="shift">
+		<input type="submit" name="export" value="ok">
+	</form>
 </div>
 
 <table id="shifts_table" cellspacing="0">
@@ -161,8 +115,8 @@
 	{/if}
 		{$date = explode("-" , $cur_day)}
 		{$week_day = date("D" , strtotime($cur_day))}
-		<td class="date">{(int)($date[2])}</td>
-		<td class="date">{$week_day}</td>
+		<td width="50" class="date">{(int)($date[2])}</td>
+		<td width="50" class="date">{$week_day}</td>
 		{$day_shift = 0}
 		{foreach from=$day_shifts item=shift}
 			{$day_shift = $day_shift + 1}
@@ -177,7 +131,7 @@
 			{else}
 			{$td_class = ""}
 			{/if}
-			<td {$td_class}>
+			<td width="150" {$td_class}>
 				<div id="item_{$shift.id}" class="shift_item">
 					<div id="name" class="name">{$shift.last_name}</div>
 					<div id="time" class="time">{date("H" , $shift.start)} - {date("H" , $shift.end)}</div>
@@ -202,10 +156,8 @@
 	</tr>
 	{/foreach}
 </table>
+	
 
 {foreach from=$WINDOWS item=window key=index}
 	{include file="window.tpl"}
 {/foreach}
-
-</body>
-</html>

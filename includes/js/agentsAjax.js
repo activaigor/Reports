@@ -1,28 +1,52 @@
 var callers_list = new Array();
 var sqlcallers_list = new Array();
 
-function getData(city,detail,logged,queue) {
+$(document).ready(function(){
+	getData(city, detail, queue, agent_name);
+	getCallers(city, queue);
+	setInterval( function() { updateData(city, detail, queue, agent_name) } , 3000);
+	setInterval( function() { updateDataCallers(city, queue) } , 1500)
+});
+
+function getData(city,detail,queue,my_agent) {
 	if (typeof detail == 'undefined') detail = "";
 
-	send = $.post(javascriptHandler, {ajax: 1, get: 1, detail: detail, city: city, queue: queue});
+	send = $.post(javascriptHandler, {ajax: 1, get: 1, detail: detail, city: city, queue: queue, my_agent: my_agent})
 	//send.error( function(data) {alert("ERROR")} );
 	send.success( function(data) {
 		data = eval("(" + data + ")");
 		i=0;
-		
+			
 		// FILL THE COLUMNS OF OFFLINE STATS
 		$("#offlineStats").find("#offline").html(data["totalOffline"]);
 		$("#offlineStats").find("#online").html(data["totalOnline"]);
-		
 		for (var key in data["agents"]) {
 			i++;
-			row = makeRow(data["agents"][key] , i , logged);
-			$('#agentsStat').append(row);
+			if (agent_name == data["agents"][key]["name"]) {
+				row = makeRow(city, data["agents"][key] , i , "myRow");
+				$('#whoCallBar').append(row);
+				$(".toggleStatus").click(function(){
+					$("#subStatus").slideToggle("fast");
+				});
+
+				$(".status_action").find("a").click(function(){
+				    	newstatus = $(this).attr("status");
+					agent_changeStatus(agent_name,newstatus);
+					setTimeout( function() { updateData(city, detail, queue, my_agent) } , 1000);
+				});
+		
+				$("#whoCall").css("display","block");
+
+			} else {
+				row = makeRow(city, data["agents"][key] , i , "");
+				$('#agentsStat').append(row);
+				// ORDER CAN BE CHANGED SO WE MUST TO LOOK FOR A ADV-DIV AND ONCLICK ACTION
+				$("." + data["agents"][key]["id"]).click([i] , function(e) {
+					toggleWindow("agentDIV" + e.data[0]);
+					//$("#main_menu").height($(document).height());
+				});
+			}
 			
-			// ORDER CAN BE CHANGED SO WE MUST TO LOOK FOR A ADV-DIV AND ONCLICK ACTION
-			$("." + data["agents"][key]["id"]).click([i] , function(e) {
-				toggleWindow("agentDIV" + e.data[0]);
-			});
 		}
     	
 		if (detail != "") {
@@ -35,7 +59,12 @@ function getData(city,detail,logged,queue) {
 				"</table></td></tr>";
 			$('#agentsStat').append(logText);
 		}
+		
+		$("#callersStatDiv").height($("#agentsStatDiv").height() + 20);
+		//$("#main_menu").height($(document).height());
+
 	});
+	
 }
 
 function getCallers(city,queue) {
@@ -100,19 +129,34 @@ function makeRowCaller(caller,order,flag) {
 	return newRow;
 }
 
-function makeRow(agent,order,logged) {
-		if (agent["drops"] > 0 && logged==1) drops = "<td width=\"50\" class=\"missedCalls\">" + agent["drops"] + "</td>";
+function makeRow(city,agent,order,subClass) {
+		if (agent["drops"] > 0) drops = "<td width=\"50\" class=\"missedCalls\">" + agent["drops"] + "</td>";
 		else drops = "<td width=\"50\"></td>";
 
 		if (agent["shift_attr"] == "default") shift_attr = "<td width=\"50\"><img src=\"http://cdn1.iconfinder.com/data/icons/iconbeast-lite/30/question.png\"></td>";
 		else shift_attr = "<td width=\"50\"></td>";
 			
 		if (agent["status"] != "online" && agent["status"] != "busy") offlineNum = "<td width=\"50\" id=\"offlineTD\"><p id=\"offlineNum\">" + agent["offlineNum"] + "</p></td>";
-		else offlineNum = "<td width=\"50\" id=\"offlineTD\"></td>";
-		
+		else offlineNum = "<td width=\"50\" id=\"offlineTD\"><p id=\"offlineNum\"></p></td>";
+
+		if (subClass == "myRow") {
+			statusChange = $("#changeStatus-" + agent["status"]).html();
+			statusBar = "<td width=\"20px\" id=\"statuses\">" + statusChange + "</td>";
+			$("#whoCall_begin").html("Начало: " + agent["login"].split(" ")[1]);
+			$("#whoCall_duration").html("Разговор: " + agent["call"]);
+			$("#whoCall_end").html("Конец: " + agent["logout"].split(" ")[1]);
+			$("#whoCall_ip").html("IP-адрес: " + agent["ip"]);
+			$("#whoCall_online").html("Онлайн: " + agent["online"]);
+			$("#whoCall_offline").html("Офлайн: " + agent["offline"]);
+			$("#whoCall_pause").html("Пауза: " + agent["pause"]);
+			$("#whoCall_shift").html("Смена: " + agent["duration"] + "-часовая");
+		} else {
+			statusBar = "<td width=\"20px\" id=\"statuses\"><p id=\"status" + agent["status"] + "\">" + agent["status"] + "</p></td>";
+		}
+
 		newRow =  
-			"<tr OnMouseOver=\"this.style.cursor='pointer';\" OnMouseOut=\"this.style.cursor='default';\" id=\"hoverAgents"+i+"\" class=\"" + agent["id"] + "\">" +
-				"<td width=\"50px\" oncontextmenu='return popupMenu(event," + agent["id"] + ");'><p id=\"agentButton\">" + agent["last_name"] + "<br>" + agent["name"] + "</p></td>" +
+			"<tr OnMouseOver=\"this.style.cursor='pointer';\" OnMouseOut=\"this.style.cursor='default';\" id=\"hoverAgents"+i+"\" class=\"" + agent["id"] + " " + subClass + "\">" +
+				"<td width=\"50px\" oncontextmenu='return popupMenu(event," + agent["id"] + ",\"" + city + "\");'><p id=\"agentButton\">" + agent["last_name"] + "<br>" + agent["name"] + "</p></td>" +
 				drops +
 				shift_attr +
 				"<td style=\"width: 90%;\">" +
@@ -123,7 +167,7 @@ function makeRow(agent,order,logged) {
 					"</div>" +
 				"</td>" +
 				"<td><p id=\"shiftP\">" + agent["duration"] + "h</p></td>" + 
-				"<td width=\"20px\" id=\"statuses\"><p id=\"status" + agent["status"] + "\">" + agent["status"] + "</p></td>" +
+				statusBar + 
 				offlineNum +
 			"</tr>" + 
 			"<tr class=\"adv-" + agent["id"] + "\">" +
@@ -138,11 +182,11 @@ function makeRow(agent,order,logged) {
 		return newRow;
 }
 
-function updateData(city,detail,logged,queue) {
+function updateData(city,detail,queue,my_agent) {
 	if (typeof detail == 'undefined') detail = "";
 	
 	dynamicData = Array("online" , "pause" , "offline");
-	send = $.post(javascriptHandler, {ajax: 1, get: 1, detail: detail, city: city, queue: queue});
+	send = $.post(javascriptHandler, {ajax: 1, get: 1, detail: detail, city: city, queue: queue, my_agent: my_agent});
 	//send.error( function(data) {alert("ERROR")} );
 	send.success( function(data) {
 		data = eval("(" + data + ")");
@@ -153,53 +197,91 @@ function updateData(city,detail,logged,queue) {
 		$("#offlineStats").find("#online").html(data["totalOnline"]);
 		
 		for (var key in data["agents"]) {
+			agent = data["agents"][key]
 			i++;
 			// If data is not new - we must upgrade the existed values
-			if ($("." + data["agents"][key]["id"]).size()){
+			if ($("." + agent["id"]).size()){
 				
 				// UPDATE DROPS
-				if (data["agents"][key]["drops"] > 0 && logged==1) $("." + data["agents"][key]["id"]).find("#missedCalls").html(data["agents"][key]["drops"]);
+				if (agent["drops"] > 0) $("." + agent["id"]).find("#missedCalls").html(agent["drops"]);
 				
 				// UPDATE SHIFT DURATION
-				$("." + data["agents"][key]["id"]).find("#shiftP").html(data["agents"][key]["duration"] + "h");
+				$("." + agent["id"]).find("#shiftP").html(agent["duration"] + "h");
 				
 				// UPDATE BARs-DATA
 				for (var index in dynamicData) {
-					$("." + data["agents"][key]["id"]).find("#intProgress_" + dynamicData[index]).css("width" , data["agents"][key][dynamicData[index] + "_perc"] + "%");
-					$("." + data["agents"][key]["id"]).find("#intProgress_" + dynamicData[index]).find("p").html(data["agents"][key][dynamicData[index]]);
+					$("." + agent["id"]).find("#intProgress_" + dynamicData[index]).css("width" , agent[dynamicData[index] + "_perc"] + "%");
+					$("." + agent["id"]).find("#intProgress_" + dynamicData[index]).find("p").html(agent[dynamicData[index]]);
 				}
 				
 				// UPDATE STATUS AND NAME (ORDER CAN BE CHANGED)
-				$("." + data["agents"][key]["id"]).find("#statuses").find("p").attr("id" , "status" + data["agents"][key]["status"]);
-				$("." + data["agents"][key]["id"]).find("#statuses").find("p").html(data["agents"][key]["status"]);
-				$("." + data["agents"][key]["id"]).find("#agentButton").html(data["agents"][key]["last_name"] + "<br>" + data["agents"][key]["name"]);
+				if (agent_name != agent["name"]) {
+					$("." + agent["id"]).find("#statuses").find("p").attr("id" , "status" + agent["status"]);
+					$("." + agent["id"]).find("#statuses").find("p").html(agent["status"]);
+					$("." + agent["id"]).find("#agentButton").html(agent["last_name"] + "<br>" + agent["name"]);
+				} else {
+					$("#whoCall_begin").html("Начало: " + agent["login"].split(" ")[1]);
+					$("#whoCall_duration").html("Разговор: " + agent["call"]);
+					$("#whoCall_end").html("Конец: " + agent["logout"].split(" ")[1]);
+					$("#whoCall_ip").html("IP-адрес: " + agent["ip"]);
+					$("#whoCall_online").html("Онлайн: " + agent["online"]);
+					$("#whoCall_offline").html("Офлайн: " + agent["offline"]);
+					$("#whoCall_pause").html("Пауза: " + agent["pause"]);
+					$("#whoCall_shift").html("Смена: " + agent["duration"] + "-часовая");
+					if ($("#whoCall").css("display") == "none") {
+						row = makeRow(city, data["agents"][key] , i , "myRow");
+						$('#whoCallBar').append(row);
+						$("#whoCall").css("display","block");
+						statusChange = $("#changeStatus-" + agent["status"]).html();
+						$("." + agent["id"]).find("#statuses").html(statusChange);
+						$(".status_action").find("a").click(function(){
+					    		newstatus = $(this).attr("status");
+							agent_changeStatus(agent_name,newstatus);
+							setTimeout( function() { updateData(city, detail, queue, my_agent) } , 1000);
+						});
+					}
+					oldstatus = $("." + agent["id"]).find("#statuses").find("#statusMenu").attr("status");
+					if (agent["status"] != oldstatus) {
+						statusChange = $("#changeStatus-" + agent["status"]).html();
+						$("." + agent["id"]).find("#statuses").html(statusChange);
+						$(".status_action").find("a").click(function(){
+					    		newstatus = $(this).attr("status");
+							agent_changeStatus(agent_name,newstatus);
+							setTimeout( function() { updateData(city, detail, queue, my_agent) } , 1000);
+						});
+					}
+				}
 				
 				// UPDATE OFFLINE ORDER
-				(data["agents"][key]["status"] != "online" && data["agents"][key]["status"] != "busy") 
-					? $("." + data["agents"][key]["id"]).find("#offlineTD").html("<p id=\"offlineNum\">" + data["agents"][key]["offlineNum"] + "</p>") 
-					: $("." + data["agents"][key]["id"]).find("#offlineTD").html("");
+				(agent["status"] != "online" && agent["status"] != "busy") 
+					? $("." + agent["id"]).find("#offlineNum").html(agent["offlineNum"]) 
+					: $("." + agent["id"]).find("#offlineNum").html("");
 				
 				// UPDATE ADVANCED BLOCK
-				$(".adv-" + data["agents"][key]["id"]).find("#begin").html("Начало смены: " + data["agents"][key]["login"]);
-				$(".adv-" + data["agents"][key]["id"]).find("#call").html("Время разговора: " + data["agents"][key]["call"]);
-				$(".adv-" + data["agents"][key]["id"]).find("#leave").html("Время ухода: " + data["agents"][key]["logout"]);
-				$(".adv-" + data["agents"][key]["id"]).find("#comment").html("Комментарий: " + data["agents"][key]["note"]);
-				$(".adv-" + data["agents"][key]["id"]).find("#ip").html("IP: " + data["agents"][key]["ip"]);
+				$(".adv-" + agent["id"]).find("#begin").html("Начало смены: " + agent["login"]);
+				$(".adv-" + agent["id"]).find("#call").html("Время разговора: " + agent["call"]);
+				$(".adv-" + agent["id"]).find("#leave").html("Время ухода: " + agent["logout"]);
+				$(".adv-" + agent["id"]).find("#comment").html("Комментарий: " + agent["note"]);
+				$(".adv-" + agent["id"]).find("#ip").html("IP: " + agent["ip"]);
 				
 				// ORDER CAN BE CHANGED SO WE MUST TO LOOK FOR A ADV-DIV AND ONCLICK ACTION
-				$(".adv-" + data["agents"][key]["id"]).find(".agentDIV").attr("id", "agentDIV" + i);
-				$("." + data["agents"][key]["id"]).unbind("click").click([i] , function(e) {
-					toggleWindow("agentDIV" + e.data[0]);
-				});
+				if (agent_name != agent["name"]) {
+					$(".adv-" + agent["id"]).find(".agentDIV").attr("id", "agentDIV" + i);
+					$("." + agent["id"]).unbind("click").click([i] , function(e) {
+						toggleWindow("agentDIV" + e.data[0]);
+						//$("#main_menu").height($(document).height());
+					});
+				}
 				
 			// If data is new - we must add new values to the top of the table
 			} else {
-				row = makeRow(data["agents"][key] , i);
+				row = makeRow(city,agent,i);
 				$('#agentsStat').prepend(row);
 				
 				// ORDER CAN BE CHANGED SO WE MUST TO LOOK FOR A ADV-DIV AND ONCLICK ACTION
-				$("." + data["agents"][key]["id"]).unbind("click").click([i] , function(e) {
+				$("." + agent["id"]).unbind("click").click([i] , function(e) {
 					toggleWindow("agentDIV" + e.data[0]);
+					//$("#main_menu").height($(document).height());
 				});
 			}
 			
@@ -208,4 +290,8 @@ function updateData(city,detail,logged,queue) {
 			}
 		}
 	});
+
+	$("#callersStatDiv").height($("#agentsStatDiv").height() + 20);
+	//$("#main_menu").height($(document).height() - 2);
 }
+

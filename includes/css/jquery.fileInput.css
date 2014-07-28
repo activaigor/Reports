@@ -4,8 +4,8 @@
     overflow: hidden;
     position: relative;
     float:left;
-    z-index:10;
     font-family:Helvetica, Arial, serif;
+    margin-top: 8px;
 }
 .file-input input {
     text-transform:capitalize;
@@ -22,7 +22,7 @@
 }
 .file-input .btn{
     background: black;
-    background: #76A9A9;
+    background: #333333;
     cursor: pointer;
     display: block;
 	width: 120px;

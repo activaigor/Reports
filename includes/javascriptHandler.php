@@ -5,7 +5,9 @@
     include_once('config.php');
 	$sql = new mysqlTools($MYSQL["host"],$MYSQL["user"],$MYSQL["password"],$MYSQL["db"]);
     $sql->connect();
-	$login = new Login($sql,'agents_reports');
+	$sqlBill = new mysqlTools($MYSQL_BILL["host"],$MYSQL_BILL["user"],$MYSQL_BILL["password"],$MYSQL_BILL["db"],'utf8');
+    	$sqlBill->connect();
+	$login = new Login($sql,$sqlBill,'agents_reports');
 
 	if (array_key_exists("ajax" , $_POST)) {
 		if (array_key_exists("save" , $_POST)) {
@@ -55,6 +57,7 @@
 		} elseif (array_key_exists("get" , $_POST)) {
 			
 			$detail = (empty($_POST["detail"])) ? $detail = null : $_POST["detail"];
+			$my_agent = ($_POST["my_agent"] != "None") ? $_POST["my_agent"] : Null;
 			$city = $_POST["city"];
 			
 			$queue = array_key_exists("queue" , $_POST) ? $_POST["queue"] : "tech";
@@ -62,9 +65,7 @@
 			if (!$detail) $sql = new mysqlTools($MYSQL["host"],$MYSQL["user"],$MYSQL["password"],$MYSQL["db"]);
 			else $sql = new mysqlTools($MYSQL["host"],$MYSQL["user"],$MYSQL["password"],$MYSQL["db"],"utf8");
     		$sql->connect();
-			$sqlBill = new mysqlTools($MYSQL_BILL["host"],$MYSQL_BILL["user"],$MYSQL_BILL["password"],$MYSQL_BILL["db"],'utf8');
-    		$sqlBill->connect();
-			$agents = new Agents($sql,$city,$queue,$sqlBill);
+			$agents = new Agents($sql,$city,$queue,$sqlBill,$my_agent);
 			$agents->getNames();
 			$agents->offlineOrder();
 			$data = array(
@@ -93,8 +94,6 @@
 			$workDay = $sql->query("select name,loginTime,leaveTime from work_stat where id=" . $id);
 			$workDay[0]["login"] = date("Y-m-d H:i:s" , $workDay[0]["loginTime"]);
 			$workDay[0]["leave"] = date("Y-m-d H:i:s" , $workDay[0]["leaveTime"]);
-			$sqlBill = new mysqlTools($MYSQL_BILL["host"],$MYSQL_BILL["user"],$MYSQL_BILL["password"],$MYSQL_BILL["db"],'utf8');
-    		$sqlBill->connect();
 			$records = $sqlBill->query("select record,start,end,duration,caller from cdr where dstchannel='" . $workDay[0]["name"] . "' and start>='" . $workDay[0]["login"] . "' and start<='" . $workDay[0]["leave"] . "' and duration>0");
 			$login->write_log("listen to the records on $id");
 			echo json_encode($records);

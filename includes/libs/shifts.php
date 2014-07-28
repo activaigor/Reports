@@ -1,6 +1,7 @@
 <?php
 
-	
+    require('simplexlsx.class.php');
+    
     class Shifts { 
  		
 		public $csv_dir;
@@ -9,123 +10,82 @@
 		public $agentsShifts;
 		private $UPCASE;
 		private $LOCASE;
-		private $shift_type;
+		private $queue;
 		private $city;
+		private $queues;
+		private $queues_aliases;
 
 
-    		public function Shifts($MYSQL,$AGENTS_NAMES,$CITY="kiev",$TYPE = "tech") {
+    		public function Shifts($MYSQL,$AGENTS_NAMES,$CITY,$QUEUE) {
 			$this->UPCASE = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯABCDEFGHIKLMNOPQRSTUVWXYZ";
 			$this->LOCASE = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяabcdefghiklmnopqrstuvwxyz";
-			$this->csv_dir = $_SERVER["DOCUMENT_ROOT"] . "/BETA/includes/csv";
+			$this->csv_dir = $_SERVER["DOCUMENT_ROOT"] . "/includes/csv";
 			$this->mysql = $MYSQL;
 			$this->agentsNames = $AGENTS_NAMES;
 			$this->agentsShifts = array();
-			$this->shift_type = $TYPE;
+			$this->queue = $QUEUE;
 			$this->city = $CITY;
+			$this->queues = array();
+			foreach ($this->mysql->query("SELECT * FROM queue_ranges") as $row) {
+				$this->queues[$row["range"]] = $row["queue"];
+			}
+			$this->queues_aliases = array();
+			foreach ($this->mysql->query("SELECT * FROM queue_aliases") as $row) {
+				$this->queues_aliases[$row["queue"]] = $row["alias"];
+			}
 		}
 
 		public function csv_to_array($FILE , $YEAR_MONTH) {
-			$csv_lines  = file("$this->csv_dir/$FILE");
-			if(is_array($csv_lines)) {
-				$cnt = count($csv_lines);
-				for($i = 0; $i < $cnt; $i++) {
-					$line = $csv_lines[$i];
-					$line = trim($line);
-					$first_char = true;
-					$col_num = 0;
-					$length = strlen($line);
-					for($b = 0; $b < $length; $b++) {
-						if($skip_char != true) {
-							$process = true;
-							if($first_char == true) {
-								if($line[$b] == '"') {
-									$terminator = '";';
-									$process = false;
-								} else $terminator = ';';
-								$first_char = false;
-							}
-							if($line[$b] == '"') {
-								$next_char = $line[$b + 1];
-								if($next_char == '"')
-									$skip_char = true;
-								elseif($next_char == ';') {
-									if($terminator == '";') {
-										$first_char = true;
-										$process = false;
-										$skip_char = true;
-									}
-								}
-							}
 
-							if($process == true) {
-								if($line[$b] == ';') {
-									if($terminator == ';') {
-										$first_char = true;
-										$process = false;
-									}
-								}
-							}
+			$xlsx = new SimpleXLSX("$this->csv_dir/$FILE");
 
-							if($process == true)
-								$column .= $line[$b];
+			for ($i = 1 ; $i <= $xlsx->sheetsCount() ; $i += 1) {
+				
+				$arr_unsorted = $xlsx->rows($i);
 
-							if($b == ($length - 1)) {
-								$first_char = true;
-							}
-
-							if($first_char == true) {
-								$values[$i][$col_num] = $column;
-								$column = '';
-								$col_num++;
-							}
-						} else
-							$skip_char = false;
-					}
-				}
-			}
-
-			foreach ($values as $row) {
-				foreach ($row as $key => $cell) {
-					// The cell - the number of the current month.
-					if ($key == 0 and !empty($cell)) {
-						$cur_day = $cell;
-						preg_match("/[0-9]+$/" , $cur_day , $cur_day_int);
-						$cur_day = (int)($cur_day_int[0]);
-					}
-					// We are not interested in a second cell
-					#if ($key > 1) {
-					if ($key > 1 and !empty($cell)) {
-						// We have a range of time specified in the cell
-						if (preg_match('/([0-9]+-[0-9]+)$/', $cell)) {
-							$time_range = $cell;
-							list($shift_start , $shift_end) = explode("-" , $time_range);
-						} else {
-							list($last_name , $name) = explode(" " , $cell);
-							if (array_search($this->lowercase($last_name) , $this->lowercase($this->agentsNames))) {
-								$agent_num = array_search($this->lowercase($last_name) , $this->lowercase($this->agentsNames));
-								$shift_start = strtotime("$YEAR_MONTH-$cur_day $shift_start:00:00");
-								$shift_end = strtotime("$YEAR_MONTH-$cur_day $shift_end:00:00");
-								if ($shift_end < $shift_start) {
-									$shift_end += 86400;
+				foreach ($arr_unsorted as $row) {
+					foreach ($row as $key => $cell) {
+						// The cell - the number of the current month.
+						if ($key == 0 and !empty($cell)) {
+							$cur_day = $cell;
+							preg_match("/[0-9]+$/" , $cur_day , $cur_day_int);
+							$cur_day = (int)($cur_day_int[0]);
+						}
+						// We are not interested in a second cell
+						#if ($key > 1) {
+						if ($key > 1 and !empty($cell)) {
+							// We have a range of time specified in the cell
+							if (preg_match('/([0-9]+-[0-9]+)$/', $cell)) {
+								$time_range = $cell;
+								list($shift_start , $shift_end) = explode("-" , $time_range);
+							} else if (preg_match('/.+\s.+\.$/', $cell)){
+								list($last_name , $name) = explode(" " , $cell);
+								if (array_search($this->lowercase($last_name) , $this->lowercase($this->agentsNames))) {
+									$agent_num = array_search($this->lowercase($last_name) , $this->lowercase($this->agentsNames));
+									$shift_start = strtotime("$YEAR_MONTH-$cur_day $shift_start:00:00");
+									$shift_end = strtotime("$YEAR_MONTH-$cur_day $shift_end:00:00");
+									if ($shift_end < $shift_start) {
+										$shift_end += 86400;
 									
-								}
+									}
 
-								$duration = $shift_end - $shift_start;
-								$new_shift = array(
-									"start" => $shift_start,
-									"end" => $shift_end,
-									"duration" => $duration
-								);
-								if (!array_key_exists($agent_num , $this->agentsShifts)) {
-									$this->agentsShifts[$agent_num] = array();
+									$duration = $shift_end - $shift_start;
+									$new_shift = array(
+										"start" => $shift_start,
+										"end" => $shift_end,
+										"duration" => $duration
+									);
+									if (!array_key_exists($agent_num , $this->agentsShifts)) {
+										$this->agentsShifts[$agent_num] = array();
+									}
+									array_push($this->agentsShifts[$agent_num] , $new_shift);
 								}
-								array_push($this->agentsShifts[$agent_num] , $new_shift);
 							}
 						}
 					}
 				}
-			}
 
+			}
 		}
 		
 		public function get_shifts($FROM , $TO , $DURATION) {
@@ -141,7 +101,7 @@
 			$TO = ($INCL)
 				? $TO + 86400
 				: $TO;
-			$array = $this->mysql->query("select * from agents_shifts where start >= '".$FROM."' and start <= '".$TO."' and duration >= '" . ($DURATION - 1)  * 60 * 60 . "' and duration <= '" . ($DURATION + 1) * 60 * 60 . "' and type = '" . $this->city . "_" . $this->shift_type . "' ORDER BY start");
+			$array = $this->mysql->query("select * from agents_shifts where start >= '".$FROM."' and start <= '".$TO."' and queue = '" . $this->city . "_" . $this->queue . "' ORDER BY start");
 			foreach ($array as $shift) {
 				$cur_day = date("Y-m-d" , $shift["start"]);
 				if (!array_key_exists($cur_day , $mysql_shifts))
@@ -167,7 +127,8 @@
 		public function mysql_export() {
 			foreach ($this->agentsShifts as $name => $shifts) {
 				foreach ($shifts as $data) {
-					$this->mysql->query("INSERT INTO agents_shifts (name,start,end,duration,type) VALUES ('" . $name . "','" . $data["start"] . "','" . $data["end"] . "','" . $data["duration"] . "','" . $this->city . "_" . $this->shift_type . "')");
+					$cur_queue = $this->get_agent_queue($name);
+					$this->mysql->query("INSERT INTO agents_shifts (name,start,end,duration,queue) VALUES ('" . $name . "','" . $data["start"] . "','" . $data["end"] . "','" . $data["duration"] . "','" . $this->queues_aliases[$cur_queue] . "')");
 				}
 			}
 			echo "success";
@@ -191,7 +152,7 @@
 					"shift_attr" => "associated"
 				);
 				
-				$this->mysql->query("INSERT INTO agents_shifts (name,start,end,duration,type) VALUES ('" . $agent_num . "','" . $shift_start . "','" . $shift_end . "','" . $duration . "','" . $this->city . "_" . $this->shift_type . "')");
+				$this->mysql->query("INSERT INTO agents_shifts (name,start,end,duration,queue) VALUES ('" . $agent_num . "','" . $shift_start . "','" . $shift_end . "','" . $duration . "','" . $this->city . "_" . $this->queue . "')");
 				return $shift_arr;
 
 			} else {
@@ -244,6 +205,18 @@
 
 		private function lowercase($arg=''){return $this->mb_strtr($arg, $this->UPCASE, $this->LOCASE);}
 		private function uppercase($arg=''){return $this->mb_strtr($arg, $this->LOCASE, $this->UPCASE);}
+
+		private function get_agent_queue($name) {
+			$agent_num = explode("/" , $name);
+			if (count($agent_num) > 0) {
+				foreach ($this->queues as $range => $queue) {
+						list($range_fr,$range_to) = explode("-",$range);
+						if(in_array((int)($agent_num[1]), range((int)($range_fr), (int)($range_to)))) {
+							return $this->queues[$range];
+						}
+				}
+			}
+		}
 
 	}
 

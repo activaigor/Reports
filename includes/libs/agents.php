@@ -14,17 +14,19 @@
 		public $offlineNum;
 		public $logText;
 		public $agentsIP;
+		public $my_agent;
 
-		public function Agents($SQL,$CITY=null,$QUEUE="shared",$SQL_BILL=null) {
+		public function Agents($SQL,$CITY=null,$QUEUE="shared",$SQL_BILL=null,$my_agent = Null) {
 			$this->mysqlLocal = $SQL;
 			$this->mysqlBilling = $SQL_BILL;
-			$this->queue = $QUEUE;
-			$this->city = $CITY;
+			$this->queue = ($QUEUE != "None") ? $QUEUE : Null;
+			$this->city = ($CITY != "None") ? $CITY : Null;
 			$this->totalOnline = 0;
 			$this->totalOffline = 0;
 			$this->logText = "";
-			$this->whereClause = $this->checkCityQueue($CITY,$QUEUE);
+			$this->whereClause = $this->checkCityQueue($CITY,$QUEUE,$my_agent);
 			$this->agentsIP = array();
+			$this->my_agent = $my_agent;
 		}
 
 		public function updateHistory($item,$id) {
@@ -76,19 +78,16 @@
 		}
 
 
-		private function checkCityQueue($CITY,$QUEUE) {
-                         if ($CITY != null) {
-			/*
-			$cityArr=array (
-                                 "kiev"=>"where (REPLACE(name,'Agent/','')<=60 or (REPLACE(name,'Agent/','')>=71 and REPLACE(name,'Agent/','')<=81)) AND (queue = '$QUEUE')",
-                                         "ifrankovsk"=>"where (REPLACE(name,'Agent/','')>60 and REPLACE(name,'Agent/','')<70) AND (queue = '$QUEUE')",
-                                         "ternopol"=>"where (REPLACE(name,'Agent/','')>=90 and REPLACE(name,'Agent/','')<=100) AND (queue = '$QUEUE')"
-                         );
-			 */
-                                 return "WHERE queue = '" . $CITY . "_" . $QUEUE . "'";
-                         } else {
-                                 return "WHERE queue = 'kiev_" . $QUEUE . "'";
-                         }
+		private function checkCityQueue($CITY,$QUEUE,$MY_AGENT=Null) {
+			 if ($CITY == Null and $QUEUE == Null and $MY_AGENT != Null) {
+	                 	return "WHERE name = '$MY_AGENT'";
+			 } else {
+	                         if ($CITY != Null) {
+	                                 return ($MY_AGENT == Null) ? "WHERE queue = '" . $CITY . "_" . $QUEUE . "'" : "WHERE queue = '" . $CITY . "_" . $QUEUE . "' or name = '$MY_AGENT'";
+	                         } else {
+	                                 return ($MY_AGENT == Null) ? "WHERE queue = 'kiev_" . $QUEUE . "'" : "WHERE queue = 'kiev_" . $QUEUE . "' or name = '$MY_AGENT'";
+	                         }
+			 }
                 }
 
 
@@ -507,6 +506,8 @@
 				} 
 			else return false;
 		}
+		
+
 	}
 
 ?>

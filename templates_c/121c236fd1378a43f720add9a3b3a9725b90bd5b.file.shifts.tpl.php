@@ -1,28 +1,30 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-06-01 10:09:27
+<?php /* Smarty version Smarty-3.1.12, created on 2014-05-30 15:34:23
          compiled from "/var/www/html/agents/BETA/templates/shifts.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1012283226519f27192d71c7-43670918%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:60052570653887acf337b67-43508839%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '121c236fd1378a43f720add9a3b3a9725b90bd5b' => 
     array (
       0 => '/var/www/html/agents/BETA/templates/shifts.tpl',
-      1 => 1370012514,
+      1 => 1395748608,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1012283226519f27192d71c7-43670918',
+  'nocache_hash' => '60052570653887acf337b67-43508839',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_519f2719346294_27146695',
   'variables' => 
   array (
     'agentsNames' => 0,
     'name' => 0,
-    'duration' => 0,
-    'FILTER' => 0,
+    'ICONS' => 0,
+    'queue' => 0,
+    'QUEUES' => 0,
+    'login_queue' => 0,
+    'city' => 0,
+    'queue_en' => 0,
     'mysql_shifts' => 0,
     'cur_day' => 0,
     'date' => 0,
@@ -33,21 +35,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'agentNum' => 0,
     'agentsNamesOnline' => 0,
     'td_class' => 0,
+    'duration' => 0,
     'shifts_limits' => 0,
     'step' => 0,
     'WINDOWS' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_53887acf58f702_46659996',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_519f2719346294_27146695')) {function content_519f2719346294_27146695($_smarty_tpl) {?><html>
-<head>
-<link type="text/css" rel="stylesheet" media="all" href="./includes/css/shifts.css"\>
-<link type="text/css" rel="stylesheet" media="all" href="./includes/css/jquery-ui.css"\>
-<link rel="stylesheet" href="./includes/css/jquery.fileInput.css" />
-<script src="./includes/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-<script src="./includes/js/jquery-ui.js" type="text/javascript"></script>
-<script src="./includes/js/jquery.fileInput.js" type="text/javascript"></script>
-<script>
+<?php if ($_valid && !is_callable('content_53887acf58f702_46659996')) {function content_53887acf58f702_46659996($_smarty_tpl) {?><script>
 	var hoverTimeout;
 	var agentNames = [
 		<?php  $_smarty_tpl->tpl_vars['name'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['name']->_loop = false;
@@ -113,48 +110,64 @@ $_smarty_tpl->tpl_vars['name']->_loop = true;
 			$("#shift_delete").find("#end").val(time[1]);
 			$("#shift_delete").css("display" , "block");
 		});
+			
+		$("#pick_calendar").click(function(){
+			if ($("#daySelect").css("margin-right") == "-260px") {
+				$("#daySelect").animate({
+					marginRight: "0px"
+				},100);
+			} else {
+				$("#daySelect").animate({
+					marginRight: "-260px"
+				},100);
+			}
+		});
 
 	});
 </script>
-</head>
-<body>
-<a href="/" id="mainLogo"><img src="./includes/pictures/roundcube_logo.png" style="position: fixed; top: 5px; left: 0px; border: none;"></a>
 
+<div id="daySelect">
+	<a href="#" id="pick_calendar"><img height="48" src="<?php echo str_replace("[icon_type]","light",$_smarty_tpl->tpl_vars['ICONS']->value['calendar']);?>
+"></a>
+	<input type="text" class="datepicker" name="from" value="<?php echo $_GET['from'];?>
+">
+	<input type="text" class="datepicker" name="to" value="<?php echo $_GET['to'];?>
+">
+	<input type="submit" value="ok">
+</div>
+	
 <div id="main_navigation">
-	<h3>панель экспорта</h3>
+
+	<div id="select_queue">
+		<div id="cssmenu">
+		<ul>
+	   		<li class="has-sub"><a href="/" id="queue_selected"><span><?php echo $_smarty_tpl->tpl_vars['QUEUES']->value[$_smarty_tpl->tpl_vars['queue']->value];?>
+</span></a>
+      			<ul>
+            		<?php  $_smarty_tpl->tpl_vars['queue_en'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['queue_en']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['login_queue']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['queue_en']->key => $_smarty_tpl->tpl_vars['queue_en']->value){
+$_smarty_tpl->tpl_vars['queue_en']->_loop = true;
+?>
+                		<li><a href="/<?php echo $_smarty_tpl->tpl_vars['city']->value;?>
+/shifts/<?php echo $_smarty_tpl->tpl_vars['queue_en']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['QUEUES']->value[$_smarty_tpl->tpl_vars['queue_en']->value];?>
+</a></li>
+	            	<?php } ?>
+      			</ul>
+   			</li>
+		</ul>
+		</div>
+	</div>
+
 	<form id="shifts_export" method="post" enctype="multipart/form-data">
-		<table>
-		<tr>
-			<td><input type="file" name="shift"></td>
-			<td><input type="submit" name="export" value="ok"></td>
-		</tr>
-		<tr>
-			<td><input type="text" name="year_month" value="<?php echo date("Y-m");?>
-"></td>
-		</tr>
-		</table>
-	</form>
-	<h3>фильтр даты</h3>
-	<?php echo $_smarty_tpl->getSubTemplate ('dayFilter.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
-	<h3>фильтр смен</h3>
-	<form id="shift_select" method="get">
-		<?php if (($_smarty_tpl->tpl_vars['duration']->value==8)){?>
-		<input type="submit" name="shift_type" class="selected" value="8">
-		<?php }else{ ?>
-		<input type="submit" name="shift_type" value="8">
-		<?php }?>
-		<?php if (($_smarty_tpl->tpl_vars['duration']->value==12)){?>
-		<input type="submit" name="shift_type" class="selected" value="12">
-		<?php }else{ ?>
-		<input type="submit" name="shift_type" value="12">
-		<?php }?>
-		<input type="hidden" name="from" value="<?php echo $_smarty_tpl->tpl_vars['FILTER']->value['from'];?>
+	<img height="48" src="<?php echo str_replace("[icon_type]","light",$_smarty_tpl->tpl_vars['ICONS']->value['excel']);?>
 ">
-		<input type="hidden" name="to" value="<?php echo $_smarty_tpl->tpl_vars['FILTER']->value['to'];?>
+		<input type="text" name="year_month" value="<?php echo date("Y-m");?>
 ">
+		<input type="file" name="shift">
+		<input type="submit" name="export" value="ok">
 	</form>
-
 </div>
 
 <table id="shifts_table" cellspacing="0">
@@ -172,9 +185,9 @@ $_smarty_tpl->tpl_vars['day_shifts']->_loop = true;
 	<?php }?>
 		<?php $_smarty_tpl->tpl_vars['date'] = new Smarty_variable(explode("-",$_smarty_tpl->tpl_vars['cur_day']->value), null, 0);?>
 		<?php $_smarty_tpl->tpl_vars['week_day'] = new Smarty_variable(date("D",strtotime($_smarty_tpl->tpl_vars['cur_day']->value)), null, 0);?>
-		<td class="date"><?php echo (int)($_smarty_tpl->tpl_vars['date']->value[2]);?>
+		<td width="50" class="date"><?php echo (int)($_smarty_tpl->tpl_vars['date']->value[2]);?>
 </td>
-		<td class="date"><?php echo $_smarty_tpl->tpl_vars['week_day']->value;?>
+		<td width="50" class="date"><?php echo $_smarty_tpl->tpl_vars['week_day']->value;?>
 </td>
 		<?php $_smarty_tpl->tpl_vars['day_shift'] = new Smarty_variable(0, null, 0);?>
 		<?php  $_smarty_tpl->tpl_vars['shift'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['shift']->_loop = false;
@@ -194,7 +207,7 @@ $_smarty_tpl->tpl_vars['shift']->_loop = true;
 			<?php }else{ ?>
 			<?php $_smarty_tpl->tpl_vars['td_class'] = new Smarty_variable('', null, 0);?>
 			<?php }?>
-			<td <?php echo $_smarty_tpl->tpl_vars['td_class']->value;?>
+			<td width="150" <?php echo $_smarty_tpl->tpl_vars['td_class']->value;?>
 >
 				<div id="item_<?php echo $_smarty_tpl->tpl_vars['shift']->value['id'];?>
 " class="shift_item">
@@ -232,6 +245,7 @@ $_smarty_tpl->tpl_vars['step']->_loop = true;
 	</tr>
 	<?php } ?>
 </table>
+	
 
 <?php  $_smarty_tpl->tpl_vars['window'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['window']->_loop = false;
  $_smarty_tpl->tpl_vars['index'] = new Smarty_Variable;
@@ -243,7 +257,4 @@ $_smarty_tpl->tpl_vars['window']->_loop = true;
 	<?php echo $_smarty_tpl->getSubTemplate ("window.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php } ?>
-
-</body>
-</html>
 <?php }} ?>

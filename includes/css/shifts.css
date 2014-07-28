@@ -1,10 +1,3 @@
-* {
-	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	color: #383838;
-}
-
 #makeReport {
     border-collapse: collapse;
     margin-top: 100px;
@@ -65,71 +58,55 @@
 	background: #F0F0F0;
 }
 
-#daySelect form input[type=text]{
-	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-	width: 100%;
-	font-size: 12px;
-	text-align: center;
-}
-
-#daySelect form select{
-	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-	width: 100%;
-	font-size: 12px;
-	text-align: center;
-}
-
-#daySelect form input[type=submit]{
-	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-	font-size: 12px;
-	padding: 5px;
-	width: 100%;
-}
-
 #main_navigation {
-	position: fixed;
-	top: 60px;
-	background: #FAFAFA;
-	border: 1px solid #8A8A8A;
-}
-
-#main_navigation h3{
-	width: 100%;
-	text-transform: uppercase;
-	font-size: 15px;
-	background: black;
-	color: white;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
+	height: 90px;
+	padding: 0px;
 	margin: 0px;
-	margin-bottom: 10px;
+	margin-top: 20px;
+	margin-left: 80px;
 }
 
 #shifts_export {
-	margin-left: 10px;
+	margin: 0px;
+	float: right;
+	background: #EFEFEF;
+	width: 470px;
 }
 
 #shifts_export input[type=submit]{
-	background: #76A9A9;
+	background: #333333;
 	border: none;
 	color: white;
 	height: 33px;
 	width: 80px;
 	margin-left: 10px;
+	margin-top: 8px;
 	text-transform: uppercase;
 	font-size: 11px;
 	font-weight: bold;
+	float: left;
 }
 
 #shifts_export input[type=text]{
 	font-size: 11px;
 	text-align: center;
 	width: 155px;
+	height: 30px;
+	line-height: 30px;
+	border: none;
+	float: left;
+	margin-top: 8px;
+	margin-right: 10px;
 }
 
 #shifts_export input[type=file]{
 	width: 155px;
+	float: left;
+}
+
+#shifts_export img {
+	display: block;
+	float: left;
 }
 
 #shifts_export input[type=submit]:hover {
@@ -138,11 +115,10 @@
 
 #shifts_table {
 	margin: 0px auto;
-	margin-top: 60px;
-	width: 1100px;
-	-webkit-box-shadow: 0px 9px 17px rgba(50, 50, 50, 0.5);
-	-moz-box-shadow:    0px 9px 17px rgba(50, 50, 50, 0.5);
-	box-shadow:         0px 9px 17px rgba(50, 50, 50, 0.5);
+	margin-top: 20px;
+	margin-left: 100px;
+	width: 1200px;
+	border-collapse: collapse;
 }
 
 #shifts_table tr.current_day {
@@ -326,5 +302,59 @@
 }
 
 #shift_select input[type=submit]:hover {
+	cursor: pointer;
+}
+
+#daySelect {
+	position: fixed;
+	top: 75px;
+	right: 0px;
+	height: 30px;
+	width: 290px;
+	padding: 10px;
+	background: #EFEFEF;
+	margin: 0px auto;
+	margin-right: -260px;
+}
+
+#daySelect #pick_calendar {
+	display: block;
+	float: left;
+	margin-top: -10px;
+	margin-left: -10px;
+	margin-right: 10px;
+}
+
+#daySelect input[type=text]{
+	margin: 0px;
+	margin-right: 5px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	width: 80px;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: none;
+	float: left;
+}
+
+#daySelect input[type=submit]{
+	padding: 0px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 9px;
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	border: none;
+	background: #333;
+	color: white;
+	margin: 0px;
+	margin-left: 5px;
+	text-transform: uppercase;
+}
+
+#daySelect input[type=submit]:hover {
 	cursor: pointer;
 }

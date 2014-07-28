@@ -2,7 +2,7 @@
 	<tr>
 		<td>
 			<audio id="recordSource" controls="controls">
-				<source src="/includes/records/monitor/2013/07/05/agent_05072013075903_1373000328.184467.WAV" type="audio/wav">
+				<source src="" type="audio/wav">
 				Your browser does not support this audio format.
 			</audio>
 		</td>
