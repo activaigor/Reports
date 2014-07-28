@@ -60,9 +60,23 @@
 	<script src="/includes/js/jquery-ui.js" type="text/javascript"></script>
 	{/if}
 	<link type="text/css" rel="stylesheet" media="all" href="/includes/css/agentsOnline.css"\>
+<<<<<<< HEAD
 	<script src="/includes/js/agentsAjax.js" type="text/javascript"></script>
 	<script src="/includes/js/advancedFuncs.js" type="text/javascript"></script>
 	<script src="/includes/js/whoCall.js" type="text/javascript"></script>
+=======
+<<<<<<< HEAD
+	<link href="/includes/js/toastr/toastr.css" rel="stylesheet"/>
+	<script src="/includes/js/agentsAjax.js" type="text/javascript"></script>
+	<script src="/includes/js/advancedFuncs.js" type="text/javascript"></script>
+	<script src="/includes/js/whoCall.js" type="text/javascript"></script>
+	<script src="/includes/js/toastr/toastr.min.js" type="text/javascript"></script>
+=======
+	<script src="/includes/js/agentsAjax.js" type="text/javascript"></script>
+	<script src="/includes/js/advancedFuncs.js" type="text/javascript"></script>
+	<script src="/includes/js/whoCall.js" type="text/javascript"></script>
+>>>>>>> 3aca116d1fe9118a8e2021133640a317630b9b8a
+>>>>>>> origin/devel
 	<script type="application/javascript" src="http://jsonip.appspot.com/?callback=getip"> </script>
 	{/if}
 

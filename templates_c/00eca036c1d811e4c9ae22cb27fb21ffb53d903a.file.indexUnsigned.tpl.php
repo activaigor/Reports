@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2014-07-04 13:08:32
+<?php /* Smarty version Smarty-3.1.12, created on 2014-07-28 17:14:32
          compiled from "/var/www/html/Reports/templates/indexUnsigned.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:166461750453b67d20d70bc8-17540216%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3472491853d65ac8a04021-11165175%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '166461750453b67d20d70bc8-17540216',
+  'nocache_hash' => '3472491853d65ac8a04021-11165175',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_53b67d20d9c6b5_97205418',
+  'unifunc' => 'content_53d65ac8b5d593_85044965',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53b67d20d9c6b5_97205418')) {function content_53b67d20d9c6b5_97205418($_smarty_tpl) {?>	<?php if (($_SERVER['REMOTE_ADDR']=="194.50.85.922")){?>
+<?php if ($_valid && !is_callable('content_53d65ac8b5d593_85044965')) {function content_53d65ac8b5d593_85044965($_smarty_tpl) {?>	<?php if (($_SERVER['REMOTE_ADDR']=="194.50.85.922")){?>
 	<div id="realtimeBlock" style="width: 99%">
 		<?php echo $_smarty_tpl->getSubTemplate ("agentsOnline.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 

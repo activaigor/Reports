@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2014-07-16 14:23:58
+<?php /* Smarty version Smarty-3.1.12, created on 2014-07-28 17:13:11
          compiled from "/var/www/html/Reports/templates/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:57440824153b67d20cca518-44332592%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:29979186053d65a7767b090-20225295%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '224cf8515f147c3d4868b9aafb86dbcbd9d1117d' => 
     array (
       0 => '/var/www/html/Reports/templates/index.tpl',
-      1 => 1405509827,
+      1 => 1406556762,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '57440824153b67d20cca518-44332592',
+  'nocache_hash' => '29979186053d65a7767b090-20225295',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_53b67d20d6d4c8_34991512',
   'variables' => 
   array (
     'loginStatus' => 0,
@@ -24,8 +22,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'WINDOWS' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_53d65a77c5fde3_48272050',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53b67d20d6d4c8_34991512')) {function content_53b67d20d6d4c8_34991512($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_53d65a77c5fde3_48272050')) {function content_53d65a77c5fde3_48272050($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -88,9 +88,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<script src="/includes/js/jquery-ui.js" type="text/javascript"></script>
 	<?php }?>
 	<link type="text/css" rel="stylesheet" media="all" href="/includes/css/agentsOnline.css"\>
+<<<<<<< HEAD
 	<script src="/includes/js/agentsAjax.js" type="text/javascript"></script>
 	<script src="/includes/js/advancedFuncs.js" type="text/javascript"></script>
 	<script src="/includes/js/whoCall.js" type="text/javascript"></script>
+=======
+<<<<<<< HEAD
+	<link href="/includes/js/toastr/toastr.css" rel="stylesheet"/>
+	<script src="/includes/js/agentsAjax.js" type="text/javascript"></script>
+	<script src="/includes/js/advancedFuncs.js" type="text/javascript"></script>
+	<script src="/includes/js/whoCall.js" type="text/javascript"></script>
+	<script src="/includes/js/toastr/toastr.min.js" type="text/javascript"></script>
+=======
+	<script src="/includes/js/agentsAjax.js" type="text/javascript"></script>
+	<script src="/includes/js/advancedFuncs.js" type="text/javascript"></script>
+	<script src="/includes/js/whoCall.js" type="text/javascript"></script>
+>>>>>>> 3aca116d1fe9118a8e2021133640a317630b9b8a
+>>>>>>> origin/devel
 	<script type="application/javascript" src="http://jsonip.appspot.com/?callback=getip"> </script>
 	<?php }?>
 

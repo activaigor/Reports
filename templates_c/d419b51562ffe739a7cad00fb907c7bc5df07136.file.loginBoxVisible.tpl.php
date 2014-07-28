@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2014-07-04 13:08:32
+<?php /* Smarty version Smarty-3.1.12, created on 2014-07-28 17:14:32
          compiled from "/var/www/html/Reports/templates/loginBoxVisible.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:208058623353b67d20d9e898-02553821%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:80621430053d65ac8b68a84-89448335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '208058623353b67d20d9e898-02553821',
+  'nocache_hash' => '80621430053d65ac8b68a84-89448335',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_53b67d20d9fcf0_98255501',
+  'unifunc' => 'content_53d65ac8b713c8_76267030',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53b67d20d9fcf0_98255501')) {function content_53b67d20d9fcf0_98255501($_smarty_tpl) {?><div id="loginBoxVisible">
+<?php if ($_valid && !is_callable('content_53d65ac8b713c8_76267030')) {function content_53d65ac8b713c8_76267030($_smarty_tpl) {?><div id="loginBoxVisible">
 	<form name="logging" method="post" action="/">
 		<input type="hidden" name="logging" value="1">
 		<table id="loginTable">

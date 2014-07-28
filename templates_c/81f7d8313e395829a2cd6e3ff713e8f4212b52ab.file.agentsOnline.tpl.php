@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2014-07-16 14:24:04
+<?php /* Smarty version Smarty-3.1.12, created on 2014-07-28 17:13:12
          compiled from "/var/www/html/Reports/templates/agentsOnline.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:103677008253b680ec27fbd9-58229001%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:195684037953d65a78032cc4-05417174%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,12 +11,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '103677008253b680ec27fbd9-58229001',
+  'nocache_hash' => '195684037953d65a78032cc4-05417174',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_53b680ec2afa63_22177276',
   'variables' => 
   array (
     'queue' => 0,
@@ -28,8 +26,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'loginRule' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_53d65a7805d9a1_11266413',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53b680ec2afa63_22177276')) {function content_53b680ec2afa63_22177276($_smarty_tpl) {?><table id="offlineStats" cellspacing="1">
+<?php if ($_valid && !is_callable('content_53d65a7805d9a1_11266413')) {function content_53d65a7805d9a1_11266413($_smarty_tpl) {?><table id="offlineStats" cellspacing="1">
 	<tr>
 		<td width="100" style="padding-left: 20px">ОФФЛАЙН:</td>
 		<td id="offline"></td>
