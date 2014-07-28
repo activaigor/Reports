@@ -55,10 +55,7 @@ function fillCallData(cd){
 	$("#newCall").find("#numb").html(cd['Number']);
 	$("#newCall").find("#city").html(cd['City']);
 	$("#newCall").find("#lang").html(cd['Language']);
-<<<<<<< HEAD
 	toastr.info(cd['CallReason']);
-=======
->>>>>>> 3aca116d1fe9118a8e2021133640a317630b9b8a
 }
 
 function agent_hello(name) {
