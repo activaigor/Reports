@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2014-07-24 13:13:49
+<?php /* Smarty version Smarty-3.1.12, created on 2014-07-24 15:00:38
          compiled from "/var/www/html/Reports-dev/templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:199969548053d0dc5d04ff27-10757200%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '87ae85273a1278dbe9a1b136a9f1c68f1b89b3d5' => 
     array (
       0 => '/var/www/html/Reports-dev/templates/index.tpl',
-      1 => 1406196676,
+      1 => 1406203229,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_53d0dc5d4e2914_38691076',
   'variables' => 
   array (
     'loginStatus' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'WINDOWS' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_53d0dc5d4e2914_38691076',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_53d0dc5d4e2914_38691076')) {function content_53d0dc5d4e2914_38691076($_smarty_tpl) {?><!DOCTYPE html>
 <html>
@@ -88,9 +88,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<script src="/includes/js/jquery-ui.js" type="text/javascript"></script>
 	<?php }?>
 	<link type="text/css" rel="stylesheet" media="all" href="/includes/css/agentsOnline.css"\>
+	<link href="/includes/js/toastr/toastr.css" rel="stylesheet"/>
 	<script src="/includes/js/agentsAjax.js" type="text/javascript"></script>
 	<script src="/includes/js/advancedFuncs.js" type="text/javascript"></script>
 	<script src="/includes/js/whoCall.js" type="text/javascript"></script>
+	<script src="/includes/js/toastr/toastr.min.js" type="text/javascript"></script>
 	<script type="application/javascript" src="http://jsonip.appspot.com/?callback=getip"> </script>
 	<?php }?>
 

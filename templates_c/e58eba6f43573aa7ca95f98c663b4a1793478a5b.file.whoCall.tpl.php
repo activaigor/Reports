@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2014-07-24 13:13:50
+<?php /* Smarty version Smarty-3.1.12, created on 2014-07-24 13:40:50
          compiled from "/var/www/html/Reports-dev/templates/whoCall.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:139694273053d0dc5edc3bf7-98270247%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e58eba6f43573aa7ca95f98c663b4a1793478a5b' => 
     array (
       0 => '/var/www/html/Reports-dev/templates/whoCall.tpl',
-      1 => 1406196676,
+      1 => 1406198445,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_53d0dc5ee07847_24444953',
   'variables' => 
   array (
     'userPhoto' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_53d0dc5ee07847_24444953',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_53d0dc5ee07847_24444953')) {function content_53d0dc5ee07847_24444953($_smarty_tpl) {?><div id="whoCall" style="display: none;">
 	<div class="avatar" style="background-image: url(https://my.lanet.ua/download.php?source=photo&id=<?php echo $_smarty_tpl->tpl_vars['userPhoto']->value;?>
