@@ -60,10 +60,11 @@
 	<script src="/includes/js/jquery-ui.js" type="text/javascript"></script>
 	{/if}
 	<link type="text/css" rel="stylesheet" media="all" href="/includes/css/agentsOnline.css"\>
+	<link href="/includes/js/toastr/toastr.css" rel="stylesheet"/>
+	<script src="/includes/js/toastr/toastr.min.js" type="text/javascript"></script>
 	<script src="/includes/js/agentsAjax.js" type="text/javascript"></script>
 	<script src="/includes/js/advancedFuncs.js" type="text/javascript"></script>
 	<script src="/includes/js/whoCall.js" type="text/javascript"></script>
-	<link href="/includes/js/toastr/toastr.css" rel="stylesheet"/>
 	<script type="application/javascript" src="http://jsonip.appspot.com/?callback=getip"> </script>
 	{/if}
 

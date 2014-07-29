@@ -8,21 +8,12 @@
 	<div id="callInfo">
 		<table id="newCall" cellspacing="0">
 			<tr>
-<<<<<<< HEAD
 				<td>Клиент</td><td width="250" id="fio"></td>
 				<td id="numb"></td>
 			</tr>
 			<tr>
 				<td>Город</td><td width="200" id="city"></td>
 				<td align="right" id="lang"></td>
-=======
-				<td>Клиент</td><td width="250" id="fio">Рыжий Игорь Николаевич</td>
-				<td id="numb">0939440149</td>
-			</tr>
-			<tr>
-				<td>Город</td><td width="200" id="city">Киев</td>
-				<td align="right" id="lang">ru</td>
->>>>>>> 3aca116d1fe9118a8e2021133640a317630b9b8a
 			</tr>
 		</table>
 	</div>
