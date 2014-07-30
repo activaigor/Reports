@@ -28,8 +28,10 @@ ws.onmessage = function(evt){
 			client_id = client_data["BillingID"];
 			client_login = client_data["Login"];
 			if (client_login != "Anonymous") {
-				win = window.open("https://my.lanet.ua/clients.php?cls_login_filter=%3D" + client_login + "&cls_id=" + client_id, '_blank');
-				win.focus();
+				//win = window.open("https://my.lanet.ua/clients.php?cls_login_filter=%3D" + client_login + "&cls_id=" + client_id, '_blank');
+				//win.focus();
+				var popup  = window.open("about:blank", "_blank");
+				popup.location = "https://my.lanet.ua/clients.php?cls_login_filter=%3D" + client_login + "&cls_id=" + client_id;
 			}
 		} else if (evt_data['Action'] == "Complete") {
 			$("#newCall").animate({
