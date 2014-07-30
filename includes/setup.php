@@ -3,6 +3,8 @@
 require_once('config.php');
 require('Smarty-3.1.12/libs/Smarty.class.php');
 
+#comment
+
 class Smarty_reports extends Smarty {
     function Smarty_reports() {
         parent::__construct();
